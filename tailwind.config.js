@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       fontFamily: {
         josefin: ['Josefin Sans', 'sans-serif']
+      },
+      backgroundImage: {
+        'tennis-court': "url('./assets/homepage-bg.jpg')"
       }
     }
   },
