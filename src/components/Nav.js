@@ -4,36 +4,98 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.jpg';
 
+function toggleMobileMenu() {
+  const menu = document.querySelector('.mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
 export default function Nav() {
   return (
-    <nav className="bg-lime-600 text-white">
+    <nav className="bg-zinc-800 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between">
-          <div className="flex space-x-7">
+          <div className="md:hidden flex items-center">
+            <button
+              className="outline-none mobile-menu-button"
+              onClick={toggleMobileMenu}>
+              <svg
+                className="w-10 h-10"
+                x-show="!showMenu"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          <div className="flex space-x-7 min-w-fit">
             <div>
               <Link className="flex items-center py-4 px-2" to="/">
-                <img src={logo} alt="logo" className="h-16 mr-2 rounded-md" />
-                <h3 className="font-bold text-4xl">
-                  TENNS <span className="font-light">CENTRL</span>
-                </h3>
+                <img
+                  src={logo}
+                  alt="logo"
+                  className="h-14 md:h-16 mr-2 rounded-md"
+                />
+                <div className="flex flex-col justify-start content-center text-3xl md:text-4xl pt-2.5">
+                  <div className="font-bold text-green-600">TENNS</div>
+                  <div className="font-light">CENTRL</div>
+                </div>
               </Link>
             </div>
-            <ul className="flex w-1/2 justify-around items-center list-none">
-              <Link className="navLink text-2xl font-light mx-2" to="/">
-                <li>HOME</li>
+            <div className="hidden md:flex items-center space-x-1">
+              <Link
+                className="py-4 px-2 navLink text-2xl font-light hover:text-green-600 transition duration-300"
+                to="/">
+                HOME
               </Link>
-              <Link className="navLink text-2xl font-light mx-2" to="/store">
-                <li>STORE</li>
+              <Link
+                className="py-4 px-2 navLink text-2xl font-light hover:text-green-600 transition duration-300"
+                to="/store">
+                STORE
               </Link>
-              <Link className="navLink text-2xl font-light mx-2" to="/about">
-                <li>ABOUT</li>
+              <Link
+                className="py-4 px-2 navLink text-2xl font-light hover:text-green-600 transition duration-300"
+                to="/about">
+                ABOUT
               </Link>
-            </ul>
+            </div>
           </div>
-          <Link className="navLink text-2xl mx-2" to="/checkout">
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </Link>
+          <div className="flex items-center space-x-3 ">
+            <Link
+              className="text-2xl py-2 px-2 hover:text-green-600 transition duration-300"
+              to="/checkout">
+              <FontAwesomeIcon icon={faShoppingCart} />
+            </Link>
+          </div>
         </div>
+      </div>
+      <div className="hidden mobile-menu">
+        <ul className="">
+          <li className="active">
+            <Link
+              to="/"
+              className="block text-sm px-2 py-4 text-white bg-green-600 font-semibold">
+              HOME
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/store"
+              className="block text-sm px-2 py-4 hover:bg-green-600 transition duration-300">
+              STORE
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="block text-sm px-2 py-4 hover:bg-green-600 transition duration-300">
+              ABOUT
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
