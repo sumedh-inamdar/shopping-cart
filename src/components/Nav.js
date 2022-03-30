@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPiedPiperSquare } from '@fortawesome/free-brands-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/logo.jpg';
+// import logo from '../assets/logo.jpg';
 
 function toggleMobileMenu() {
   const menu = document.querySelector('.mobile-menu');
@@ -11,7 +12,7 @@ function toggleMobileMenu() {
 
 export default function Nav() {
   return (
-    <nav className="bg-zinc-800 text-white">
+    <nav className="bg-gradient-to-r from-teal-500 to-indigo-500 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between">
           <div className="md:hidden flex items-center">
@@ -33,31 +34,32 @@ export default function Nav() {
           </div>
           <div className="flex space-x-7 min-w-fit">
             <div>
-              <Link className="flex items-center py-4 px-2" to="/">
-                <img
-                  src={logo}
-                  alt="logo"
-                  className="h-14 md:h-16 mr-2 rounded-md"
+              <Link
+                className="flex items-center text-3xl md:text-4xl py-4 px-2"
+                to="/">
+                <FontAwesomeIcon
+                  icon={faPiedPiperSquare}
+                  className="mr-2 pb-2.5"
                 />
-                <div className="flex flex-col justify-start content-center text-3xl md:text-4xl pt-2.5">
-                  <div className="font-bold text-green-600">TENNS</div>
+                <div className="flex flex-row justify-start content-center">
+                  <div className="font-bold">TENNS</div>
                   <div className="font-light">CENTRL</div>
                 </div>
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-1">
               <Link
-                className="py-4 px-2 navLink text-2xl font-light hover:text-green-600 transition duration-300"
+                className="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
                 to="/">
                 HOME
               </Link>
               <Link
-                className="py-4 px-2 navLink text-2xl font-light hover:text-green-600 transition duration-300"
+                className="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
                 to="/store">
                 STORE
               </Link>
               <Link
-                className="py-4 px-2 navLink text-2xl font-light hover:text-green-600 transition duration-300"
+                className="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
                 to="/about">
                 ABOUT
               </Link>
@@ -65,7 +67,7 @@ export default function Nav() {
           </div>
           <div className="flex items-center space-x-3 ">
             <Link
-              className="text-2xl py-2 px-2 hover:text-green-600 transition duration-300"
+              className="text-2xl py-2 px-2 hover:text-zinc-600 transition duration-300"
               to="/checkout">
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
