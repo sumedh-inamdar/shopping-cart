@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPiedPiperSquare } from '@fortawesome/free-brands-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-// import logo from '../assets/logo.jpg';
+import PropTypes from 'prop-types';
 
 function toggleMobileMenu() {
   const menu = document.querySelector('.mobile-menu');
   menu.classList.toggle('hidden');
 }
 
-export default function Nav() {
+export default function Nav({ cartQty }) {
   return (
     <nav className="bg-gradient-to-r from-teal-500 to-indigo-500 text-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -65,11 +65,16 @@ export default function Nav() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center space-x-3 ">
+          <div className="relative flex items-center">
             <Link
               className="text-2xl py-2 px-2 hover:text-zinc-600 transition duration-300"
               to="/checkout">
               <FontAwesomeIcon icon={faShoppingCart} />
+              <div className="absolute top-[36px] left-[23px] bg-orange-600 rounded-[50%] h-6 w-6 m-auto">
+                <div className="text-center w-full h-full text-base">
+                  {cartQty}
+                </div>
+              </div>
             </Link>
           </div>
         </div>
@@ -102,3 +107,6 @@ export default function Nav() {
     </nav>
   );
 }
+Nav.propTypes = {
+  cartQty: PropTypes.number
+};

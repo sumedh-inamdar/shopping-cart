@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './components/Home';
@@ -6,13 +7,15 @@ import About from './components/About';
 import Checkout from './components/Checkout';
 
 function App() {
+  const [cartQty, setCartQty] = useState(0);
+
   return (
     <div id="app">
       <BrowserRouter>
-        <Nav />
+        <Nav cartQty={cartQty} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/store" element={<Store setCartQty={setCartQty} />} />
           <Route path="/about" element={<About />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
