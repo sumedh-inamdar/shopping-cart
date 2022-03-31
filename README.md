@@ -11,6 +11,7 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 - React-Router-DOM
 - React Testing Library
 - Tailwind CSS
+- CSS Animations (custom keyframes, delays, fill-mode, etc..)
 
 ## To do list
 
