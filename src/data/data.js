@@ -10,7 +10,7 @@ export const categoryRouteMapping = new Map([
   ['Strings', 'strings']
 ]);
 
-export const store = [
+export const storeItems = [
   {
     name: 'Babolat Pure Aero',
     category: 'Tennis Racquets',
