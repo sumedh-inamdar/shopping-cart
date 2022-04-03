@@ -23,6 +23,7 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "unicorn/filename-case": "off",
-        "unicorn/prevent-abbreviations": "off"
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/no-array-for-each" : "off"
     }
 }

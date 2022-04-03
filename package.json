@@ -16,6 +16,7 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "tailwindcss-animation-delay": "^1.0.7",
+    "uniqid": "^5.4.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

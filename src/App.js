@@ -15,7 +15,9 @@ function App() {
         <Nav cartQty={cartQty} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store setCartQty={setCartQty} />} />
+          <Route
+            path="/store"
+            element={<Store setCartQty={setCartQty} />}></Route>
           <Route path="/about" element={<About />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
