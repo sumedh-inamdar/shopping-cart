@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ItemCard from './ItemCard';
 
-export default function Racquets({ items }) {
+export default function Racquets({ items, setSection }) {
   const setBrands = new Set(items.map((item) => item.brand));
+  useEffect(() => {
+    setSection('racquets');
+  });
   return (
-    <div>
-      <div className="text-5xl font-semibold my-6">Tennis Racquets</div>
+    <div className="space-y-14 mt-10">
       {[...setBrands].map((brand) => (
         <div key={brand}>
           <div className="text-3xl font-medium my-3">{brand}</div>
-          <div className="grid gap-4 grid-cols-3 min-w-[600px]">
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-3 md:min-w-[600px]">
             {items
               .filter((item) => item.brand === brand)
               .map((item) => (
@@ -23,5 +25,6 @@ export default function Racquets({ items }) {
   );
 }
 Racquets.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  setSection: PropTypes.func
 };

@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { getItemByID } from '../../data/data';
+import { categoryRouteMapping, getItemByID } from '../../data/data';
 
-export default function ItemPage() {
+export default function ItemPage({ setSection }) {
   const params = useParams();
   const item = getItemByID(params.id);
   const [quantity, setQuantity] = useState(1);
-
+  useEffect(() => {
+    setSection(categoryRouteMapping.get(item.category));
+  });
   function increaseQuantity() {
     setQuantity(quantity + 1);
   }
@@ -30,5 +32,6 @@ export default function ItemPage() {
   );
 }
 ItemPage.propTypes = {
-  item: PropTypes.object
+  item: PropTypes.object,
+  setSection: PropTypes.func
 };
