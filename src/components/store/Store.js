@@ -7,8 +7,9 @@ import Racquets from './Racquets';
 import Shoes from './Shoes';
 // import StoreHome from './StoreHome';
 import Strings from './Strings';
+import PropTypes from 'prop-types';
 
-export default function Store() {
+export default function Store({ setCartQty }) {
   const [section, setSection] = useState('racquets');
   const navigate = useNavigate();
   const setCategories = new Set(storeItems.map((item) => item.category));
@@ -31,9 +32,11 @@ export default function Store() {
 
   return (
     <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
-      <div className="md:hidden">
-        <div>Section: </div>
-        <select value={section} onChange={handleSelect}>
+      <div className="md:hidden mx-5 mt-5 text-3xl">
+        <select
+          value={section}
+          onChange={handleSelect}
+          className="bg-gradient-to-r from-teal-200 to-indigo-200 px-2 py-3">
           {[...setCategories].map((category) => {
             const path = categoryRouteMapping.get(category);
             return (
@@ -67,7 +70,9 @@ export default function Store() {
           />
           <Route
             path="/racquets/:id"
-            element={<ItemPage setSection={setSection} />}
+            element={
+              <ItemPage setSection={setSection} setCartQty={setCartQty} />
+            }
           />
           <Route
             path="/clothing"
@@ -83,3 +88,6 @@ export default function Store() {
     </div>
   );
 }
+Store.propTypes = {
+  setCartQty: PropTypes.func
+};

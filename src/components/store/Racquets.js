@@ -8,7 +8,7 @@ export default function Racquets({ items, setSection }) {
     setSection('racquets');
   });
   return (
-    <div className="space-y-14 mt-10">
+    <div className="space-y-14 mt-5 md:mt-10">
       {[...setBrands].map((brand) => (
         <div key={brand}>
           <div className="text-3xl font-medium my-3">{brand}</div>

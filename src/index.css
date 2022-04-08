@@ -8,6 +8,14 @@
   html {
     font-family: Josefin Sans, sans-serif;
   }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 }
 
 @layer components {
@@ -17,4 +25,5 @@
   .activeSection {
     @apply underline underline-offset-2 decoration-indigo-500 decoration-8 bg-slate-200 transition;
   }
+  
 }
