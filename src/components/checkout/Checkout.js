@@ -9,12 +9,24 @@ export default function Checkout({ cart, setCart }) {
     targetCartItem.quantity = qty;
     setCart(cartCopy);
   }
+  function deleteItem(itemID) {
+    setCart(cart.filter((item) => item.id !== itemID));
+  }
+  const quantity = cart.reduce(
+    (previousValue, currentValue) => previousValue + currentValue.quantity,
+    0
+  );
   return (
     <div className="w-[480px] mx-auto my-12">
-      <div>My Cart</div>
-      <ul>
+      <div className="text-2xl text-center">My Cart ({quantity} items)</div>
+      <ul className="space-y-4">
         {cart.map((item) => (
-          <CheckoutItem key={item.id} item={item} setQuantity={setQuantity} />
+          <CheckoutItem
+            key={item.id}
+            item={item}
+            setQuantity={setQuantity}
+            deleteItem={deleteItem}
+          />
         ))}
       </ul>
     </div>
