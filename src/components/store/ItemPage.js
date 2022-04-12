@@ -65,8 +65,8 @@ export default function ItemPage({ setSection, cart, setCart }) {
                   className="border-2 w-20 text-center font-light"
                   type="number"
                   value={quantity}
-                  onChange={() =>
-                    setQuantity(Number(event.target.value))
+                  onChange={(e) =>
+                    setQuantity(Math.max(1, Number(e.target.value)))
                   }></input>
                 <button
                   className="border-2 bg-slate-200 w-6 hover:bg-slate-300"

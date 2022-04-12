@@ -18,7 +18,9 @@ export default function Checkout({ cart, setCart }) {
   );
   return (
     <div className="w-[480px] mx-auto my-12">
-      <div className="text-2xl text-center">My Cart ({quantity} items)</div>
+      <div className="text-2xl text-center mb-2">
+        My Cart ({quantity} items)
+      </div>
       <ul className="space-y-4">
         {cart.map((item) => (
           <CheckoutItem

@@ -13,15 +13,15 @@ export default function CheckoutItem({ item, setQuantity, deleteItem }) {
     setQuantity(itemQty + 1, itemID);
   }
   function decreaseQuantity() {
-    setQuantity(itemQty - 1, itemID);
+    setQuantity(Math.max(itemQty - 1, 1), itemID);
   }
   return (
     <li className="w-full px-8 py-4 flex bg-slate-200">
-      <img className="w-10" src={itemData.image} />
+      <img className="w-14 p-2 bg-white" src={itemData.image} />
       <div className="flex-1 ml-6 flex flex-col">
         <div className="text-xl">{itemData.name}</div>
         <div className="flex-1 flex text-sm">
-          <div className="flex-1 flex flex-col justify-around">
+          <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             {itemOptions.map((option) => (
               <div key={Object.keys(option)[0]} className="">
                 {Object.keys(option)[0]}:{' '}
@@ -30,14 +30,14 @@ export default function CheckoutItem({ item, setQuantity, deleteItem }) {
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col justify-around">
+          <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             <div>
               <span>Quantity: </span>
               <input
                 className="border-2 text-center font-light w-8"
                 value={itemQty}
-                onChange={(event) =>
-                  setQuantity(Number(event.target.value), itemID)
+                onChange={(e) =>
+                  setQuantity(Math.max(1, Number(e.target.value)), itemID)
                 }
                 type="number"></input>
               <div className="inline divide-x-2 divide-slate-400">
