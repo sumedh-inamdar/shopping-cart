@@ -29,22 +29,26 @@ export const storeItems = [
     description:
       'Pariatur veniam aliqua duis esse consequat magna est aliquip ex eiusmod.',
     image: babolatPureAero,
-    options: {
-      'Grip Size': [
-        '4 1/8" (#1)',
-        '4 1/4" (#2)',
-        '4 1/8" (#3)',
-        '4 1/2" (#4)',
-        '4 5/8" (#5)'
-      ],
-      Strings: [
-        'Unstrung',
-        'Synthetic Gut - $10',
-        'Polyester - $15',
-        'Multifilament - $20',
-        'Natural Gut - $40'
-      ]
-    },
+    options: [
+      {
+        'Grip Size': [
+          '4 1/8" (#1)',
+          '4 1/4" (#2)',
+          '4 3/8" (#3)',
+          '4 1/2" (#4)',
+          '4 5/8" (#5)'
+        ]
+      },
+      {
+        Strings: [
+          'Unstrung',
+          'Synthetic Gut - $10',
+          'Polyester - $15',
+          'Multifilament - $20',
+          'Natural Gut - $40'
+        ]
+      }
+    ],
     id: idIter.next().value
   },
   {
@@ -54,6 +58,26 @@ export const storeItems = [
     price: 99.99,
     description: 'Est tempor ullamco proident aliqua aliqua Lorem occaecat.',
     image: babolatPureDrive,
+    options: [
+      {
+        'Grip Size': [
+          '4 1/8" (#1)',
+          '4 1/4" (#2)',
+          '4 3/8" (#3)',
+          '4 1/2" (#4)',
+          '4 5/8" (#5)'
+        ]
+      },
+      {
+        Strings: [
+          'Unstrung',
+          'Synthetic Gut - $10',
+          'Polyester - $15',
+          'Multifilament - $20',
+          'Natural Gut - $40'
+        ]
+      }
+    ],
     id: idIter.next().value
   },
   {

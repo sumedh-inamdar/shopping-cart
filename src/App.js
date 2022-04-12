@@ -4,22 +4,30 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Store from './components/store/Store';
 import About from './components/About';
-import Checkout from './components/Checkout';
+import Checkout from './components/checkout/Checkout';
 
 function App() {
-  const [cartQty, setCartQty] = useState(0);
-
+  const [cart, setCart] = useState([]);
   return (
     <div id="app">
       <BrowserRouter>
-        <Nav cartQty={cartQty} />
+        <Nav
+          cartQty={cart.reduce(
+            (previousValue, currentValue) =>
+              previousValue + currentValue.quantity,
+            0
+          )}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="/store/*"
-            element={<Store setCartQty={setCartQty} />}></Route>
+            element={<Store cart={cart} setCart={setCart} />}></Route>
           <Route path="/about" element={<About />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={<Checkout cart={cart} setCart={setCart} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

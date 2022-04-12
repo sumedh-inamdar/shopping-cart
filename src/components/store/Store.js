@@ -9,7 +9,7 @@ import Shoes from './Shoes';
 import Strings from './Strings';
 import PropTypes from 'prop-types';
 
-export default function Store({ setCartQty }) {
+export default function Store({ cart, setCart }) {
   const [section, setSection] = useState('racquets');
   const navigate = useNavigate();
   const setCategories = new Set(storeItems.map((item) => item.category));
@@ -71,7 +71,7 @@ export default function Store({ setCartQty }) {
           <Route
             path="/racquets/:id"
             element={
-              <ItemPage setSection={setSection} setCartQty={setCartQty} />
+              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
             }
           />
           <Route
@@ -89,5 +89,6 @@ export default function Store({ setCartQty }) {
   );
 }
 Store.propTypes = {
-  setCartQty: PropTypes.func
+  cart: PropTypes.array,
+  setCart: PropTypes.func
 };

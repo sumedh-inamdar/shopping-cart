@@ -135,5 +135,5 @@ export default function Nav({ cartQty }) {
   );
 }
 Nav.propTypes = {
-  cartQty: PropTypes.number
+  cartQty: PropTypes.number.isRequired
 };
