@@ -39,7 +39,7 @@ export default function ItemPage({ setSection, cart, setCart }) {
     <div className="m-auto w-fit mt-10">
       <div className="text-4xl">{item.name}</div>
       <div className="flex">
-        <img className="m-4" src={item.image} />
+        <img className="m-4 max-w-[240px]" src={item.image} alt={item.name} />
         <div className="flex flex-col justify-around flex-1 max-w-sm text-xl m-4">
           <div>{item.description}</div>
           <div className="space-y-4 text-lg">

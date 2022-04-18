@@ -14,8 +14,19 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 - CSS Animations (custom keyframes, delays, fill-mode, etc..)
 
 ## To do list
+- [ ] Remaining store items
 - [ ] Item added popup
 - [ ] Side modal for shopping cart
+- [ ] Add mobile view support
+    - [ ] ItemPage
+    - [ ] Checkout / CheckoutItem
+- [ ] Checkout Page
+- [ ] Home Page
+    - [ ] Add Featured Items
+    - [ ] Remaining Items
+- [ ] About Page
+    - [ ] Who are we?
+- [ ] Footer
 
 ## Bugs to fix
 

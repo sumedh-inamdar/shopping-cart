@@ -16,6 +16,12 @@ export default function Store({ cart, setCart }) {
   const arrayRacquets = storeItems.filter(
     (item) => item.category === 'Tennis Racquets'
   );
+  const arrayMensClothing = storeItems.filter(
+    (item) => item.category === `Men's Clothing`
+  );
+  const arrayWomensClothing = storeItems.filter(
+    (item) => item.category === `Women's Clothing`
+  );
 
   useEffect(() => {
     document
@@ -75,8 +81,36 @@ export default function Store({ cart, setCart }) {
             }
           />
           <Route
-            path="/clothing"
-            element={<Clothing setSection={setSection} />}
+            path="/mensClothing"
+            element={
+              <Clothing
+                items={arrayMensClothing}
+                section="mensClothing"
+                setSection={setSection}
+              />
+            }
+          />
+          <Route
+            path="/mensClothing/:id"
+            element={
+              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
+            }
+          />
+          <Route
+            path="/womensClothing"
+            element={
+              <Clothing
+                section="womensClothing"
+                items={arrayWomensClothing}
+                setSection={setSection}
+              />
+            }
+          />
+          <Route
+            path="/womensClothing/:id"
+            element={
+              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
+            }
           />
           <Route path="/shoes" element={<Shoes setSection={setSection} />} />
           <Route

@@ -1,13 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { categoryRouteMapping } from '../../data/data';
 
 export default function CheckoutItem({ item, setQuantity, deleteItem }) {
   const itemData = item.item;
   const itemQty = item.quantity;
   const itemOptions = item.options;
   const itemID = item.id;
+  const path = categoryRouteMapping.get(itemData.category);
+  // const arrayMoneyOptions = Object.values(itemOptions).filter((optionValue) =>
+  //   optionValue.startsWith('$')
+  // );
+  // console.log(arrayMoneyOptions);
+  const itemCost = (
+    itemOptions
+      .map((item) => Object.values(item)[0])
+      .filter((optionValue) => optionValue.includes('$'))
+      .flatMap((option) => option.match(/\$\d+\.?\d+/gm))
+      .map((string) => Number(string.slice(1)))
+      .reduce((prev, curr) => prev + curr, itemData.price) * itemQty
+  ).toFixed(2);
 
   function increaseQuantity() {
     setQuantity(itemQty + 1, itemID);
@@ -17,9 +32,22 @@ export default function CheckoutItem({ item, setQuantity, deleteItem }) {
   }
   return (
     <li className="w-full px-8 py-4 flex bg-slate-200">
-      <img className="w-14 p-2 bg-white" src={itemData.image} />
+      <div className="w-[60px] bg-white flex">
+        <Link to={`/store/${path}/${itemData.id}`}>
+          <img
+            className="max-w-full h-auto p-2 m-auto"
+            src={itemData.image}
+            alt={itemData.name}
+          />
+        </Link>
+      </div>
       <div className="flex-1 ml-6 flex flex-col">
-        <div className="text-xl">{itemData.name}</div>
+        <Link to={`/store/${path}/${itemData.id}`}>
+          <div className="text-xl flex justify-between">
+            <div>{itemData.name}</div>
+            <div className="font-light">${itemCost}</div>
+          </div>
+        </Link>
         <div className="flex-1 flex text-sm">
           <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             {itemOptions.map((option) => (
@@ -30,7 +58,7 @@ export default function CheckoutItem({ item, setQuantity, deleteItem }) {
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
+          <div className="flex-1 flex flex-col justify-start space-y-2 mt-2 ml-2">
             <div>
               <span>Quantity: </span>
               <input
