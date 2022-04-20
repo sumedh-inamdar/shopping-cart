@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { categoryRouteMapping, getItemByID } from '../../data/data';
 import ItemOption from './ItemOption';
 import uniqid from 'uniqid';
+import { findItemInCart, setCartItemQuantity } from '../../utils/helperFunc';
 
 export default function ItemPage({ setSection, cart, setCart }) {
   const params = useParams();
@@ -26,22 +27,36 @@ export default function ItemPage({ setSection, cart, setCart }) {
     setQuantity(Math.max(quantity - 1, 1));
   }
   function addToCart() {
-    const cartObj = {
+    const cartItemObj = {
       item: item,
       quantity: quantity,
       options: options,
       id: uniqid()
     };
-    setCart([...cart, cartObj]);
+    const cartItem = findItemInCart(cartItemObj, cart);
+    if (cartItem) {
+      setCartItemQuantity(
+        cart,
+        setCart,
+        cartItem.quantity + quantity,
+        cartItem.id
+      );
+    } else {
+      setCart([...cart, cartItemObj]);
+    }
   }
 
   return (
     <div className="m-auto w-fit mt-10">
       <div className="text-4xl">{item.name}</div>
       <div className="flex">
-        <img className="m-4 max-w-[240px]" src={item.image} alt={item.name} />
+        <img
+          className="m-4 max-w-[240px] hover:scale-110 transition-transform"
+          src={item.image}
+          alt={item.name}
+        />
         <div className="flex flex-col justify-around flex-1 max-w-sm text-xl m-4">
-          <div>{item.description}</div>
+          <div className="mb-3">{item.description}</div>
           <div className="space-y-4 text-lg">
             <div>
               Unit Price: <span className="font-light">${item.price}</span>

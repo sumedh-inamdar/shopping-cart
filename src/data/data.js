@@ -16,6 +16,14 @@ import mensBottomAdidas from '../assets/mens clothing/adidas-mens-bottoms.jpg';
 import mensJacketsNike from '../assets/mens clothing/nike-mens-jackets.jpg';
 import mensJacketsAdidas from '../assets/mens clothing/adidas-mens-jackets.jpg';
 import womensTopsAdidas from '../assets/womens clothing/adidas-womens-tops.jpg';
+import womensTopsNike from '../assets/womens clothing/nike-womens-tops.jpg';
+import womensTopsYonex from '../assets/womens clothing/yonex-womens-tops.jpg';
+import womensBottomsAdidas from '../assets/womens clothing/adidas-womens-bottoms.jpg';
+import womensBottomsNike from '../assets/womens clothing/nike-womens-bottoms.jpg';
+import womensBottomsYonex from '../assets/womens clothing/yonex-womens-bottoms.jpg';
+import womensDressesNike from '../assets/womens clothing/nike-womens-dress.jpg';
+import womensDressesAdidas from '../assets/womens clothing/adidas-womens-dress.jpg';
+
 import { itemID } from './itemID';
 
 const idIter = itemID.values();
@@ -459,6 +467,137 @@ export const storeItems = [
       },
       {
         Color: ['Black', 'White']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `Nike Women's Summer Advantage Top`,
+    category: `Women's Clothing`,
+    type: 'Tops',
+    brand: 'Nike',
+    price: 59.99,
+    description:
+      'Nisi enim sint sit nisi velit eu qui ut irure id esse ex aliqua aliqua.',
+    image: womensTopsNike,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['Black', 'Purple', 'White']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `Yonex Women's Melbourne Sleeveless Polo`,
+    category: `Women's Clothing`,
+    type: 'Tops',
+    brand: 'Yonex',
+    price: 59.99,
+    description:
+      'Mollit amet consectetur ullamco magna occaecat sit veniam nisi in dolore officia.',
+    image: womensTopsYonex,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['Pink', 'Black', 'White']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `adidas Women's Core Club Pleated Skirt`,
+    category: `Women's Clothing`,
+    type: 'Bottoms',
+    brand: 'adidas',
+    price: 59.99,
+    description:
+      'Mollit amet consectetur ullamco magna occaecat sit veniam nisi in dolore officia.',
+    image: womensBottomsAdidas,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['Black', 'White']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `Nike Women's Core Club 14" Skirt`,
+    category: `Women's Clothing`,
+    type: 'Bottoms',
+    brand: 'Nike',
+    price: 59.99,
+    description:
+      'Dolore occaecat irure magna mollit in aliquip dolor sit dolor adipisicing.',
+    image: womensBottomsNike,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['Black', 'Navy', 'White']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `Yonex Women's Slam Short`,
+    category: `Women's Clothing`,
+    type: 'Bottoms',
+    brand: 'Yonex',
+    price: 59.99,
+    description:
+      'Sunt velit et aliqua minim cillum proident elit esse nulla quis.',
+    image: womensBottomsYonex,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['White', 'Black']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `Nike Women's Summer Victory Dress`,
+    category: `Women's Clothing`,
+    type: 'Dresses',
+    brand: 'Nike',
+    price: 59.99,
+    description: 'Eiusmod in consequat magna non dolor do nostrud non.',
+    image: womensDressesNike,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['Black', 'Blue', 'White', 'Yellow']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: `adidas Women's Summer Premium Dress`,
+    category: `Women's Clothing`,
+    type: 'Dresses',
+    brand: 'Adidas',
+    price: 59.99,
+    description: 'Eiusmod in consequat magna non dolor do nostrud non.',
+    image: womensDressesAdidas,
+    options: [
+      {
+        Size: ['XS', 'S', 'M', 'L', 'XL']
+      },
+      {
+        Color: ['Blue', 'White', 'Yellow']
       }
     ],
     id: idIter.next().value

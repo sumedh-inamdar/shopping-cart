@@ -1,5 +1,6 @@
 import React from 'react';
 import homeBG from '../assets/homepage-bg-red.jpg';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -15,9 +16,12 @@ export default function Home() {
             <div className="text-xl opacity-0 animate-fade-in-left-1000">
               Your number one premier tennis equipment supplier.
             </div>
-            <button className="opacity-0 animate-fade-in-left-1000 md:w-3/4 bg-gradient-to-r from-cyan-500 to-blue-500  pt-1 border-2">
-              Shop Now
-            </button>
+
+            <Link
+              to="/store"
+              className="opacity-0 animate-fade-in-left-1000 md:w-3/4 bg-blue-400 hover:bg-blue-500 transition-colors pt-1 border-2">
+              <button className="w-full">Shop Now</button>
+            </Link>
           </div>
         </div>
         <div className="hidden md:block flex-1 m-auto mx-6">
