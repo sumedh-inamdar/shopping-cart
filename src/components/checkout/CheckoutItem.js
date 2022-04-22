@@ -10,21 +10,12 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
   const cartItemQty = cartItem.quantity;
   const cartItemOptions = cartItem.options;
   const cartItemID = cartItem.id;
+  const cartItemCost = cartItem.unitPrice * cartItemQty;
   const path = categoryRouteMapping.get(item.category);
   // const arrayMoneyOptions = Object.values(itemOptions).filter((optionValue) =>
   //   optionValue.startsWith('$')
   // );
   // console.log(arrayMoneyOptions);
-
-  // simplify below code -> merge options array to object first
-  const cartItemCost = (
-    cartItemOptions
-      .map((item) => Object.values(item)[0])
-      .filter((optionValue) => optionValue.includes('$'))
-      .flatMap((option) => option.match(/\$\d+\.?\d+/gm))
-      .map((string) => Number(string.slice(1)))
-      .reduce((prev, curr) => prev + curr, item.price) * cartItemQty
-  ).toFixed(2);
 
   function increaseQuantity() {
     setQuantity(cartItemQty + 1, cartItemID);
@@ -44,12 +35,12 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
         </Link>
       </div>
       <div className="flex-1 ml-6 flex flex-col">
-        <Link to={`/store/${path}/${item.id}`}>
-          <div className="text-xl flex justify-between">
+        <div className="text-xl flex justify-between">
+          <Link to={`/store/${path}/${item.id}`}>
             <div>{item.name}</div>
-            <div className="font-light">${cartItemCost}</div>
-          </div>
-        </Link>
+          </Link>
+          <div className="font-light">${cartItemCost.toFixed(2)}</div>
+        </div>
         <div className="flex-1 flex text-sm">
           <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             {cartItemOptions.map((option) => (

@@ -4,7 +4,11 @@ import { useParams } from 'react-router-dom';
 import { categoryRouteMapping, getItemByID } from '../../data/data';
 import ItemOption from './ItemOption';
 import uniqid from 'uniqid';
-import { findItemInCart, setCartItemQuantity } from '../../utils/helperFunc';
+import {
+  findItemInCart,
+  setCartItemQuantity,
+  calcCartItemPrice
+} from '../../utils/helperFunc';
 
 export default function ItemPage({ setSection, cart, setCart }) {
   const params = useParams();
@@ -31,6 +35,7 @@ export default function ItemPage({ setSection, cart, setCart }) {
       item: item,
       quantity: quantity,
       options: options,
+      unitPrice: calcCartItemPrice(item.price, options),
       id: uniqid()
     };
     const cartItem = findItemInCart(cartItemObj, cart);

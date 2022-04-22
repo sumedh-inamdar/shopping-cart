@@ -5,11 +5,13 @@ function mergeArrayOfObj(array) {
   }
   return newObj;
 }
+
 function isSameOptions(options1, options2) {
   options1 = mergeArrayOfObj(options1);
   options2 = mergeArrayOfObj(options2);
   return Object.keys(options1).every((key) => options1[key] === options2[key]);
 }
+
 export function findItemInCart(cartItemObj, cart) {
   for (const item of cart) {
     if (
@@ -19,6 +21,15 @@ export function findItemInCart(cartItemObj, cart) {
       return item;
   }
   return false;
+}
+
+export function calcCartItemPrice(unitPrice, options) {
+  const mergedOptions = mergeArrayOfObj(options);
+  const optionsPrice = Object.values(mergedOptions)
+    .filter((optionString) => optionString.includes('$'))
+    .map((option) => Number(option.match(/\$\d+\.?\d+/gm)[0].slice(1)))
+    .reduce((prev, curr) => prev + curr);
+  return unitPrice + optionsPrice;
 }
 
 export function setCartItemQuantity(cart, setCart, qty, cartItemID) {

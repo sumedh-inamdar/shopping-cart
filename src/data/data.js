@@ -23,6 +23,10 @@ import womensBottomsNike from '../assets/womens clothing/nike-womens-bottoms.jpg
 import womensBottomsYonex from '../assets/womens clothing/yonex-womens-bottoms.jpg';
 import womensDressesNike from '../assets/womens clothing/nike-womens-dress.jpg';
 import womensDressesAdidas from '../assets/womens clothing/adidas-womens-dress.jpg';
+import babolatRPMBlast from '../assets/strings/babolat-rpmBlast.jpg';
+import solincoHyperG from '../assets/strings/solinco-hyperG.jpg';
+import luxilonALUPower from '../assets/strings/luxilon-ALUPower.jpg';
+import technifibreNRG2 from '../assets/strings/technifibre-nrg2.jpg';
 
 import { itemID } from './itemID';
 
@@ -603,31 +607,74 @@ export const storeItems = [
     id: idIter.next().value
   },
   {
-    name: 'Babolat Pure Strike VS',
+    name: 'Babolat RPM Blast',
     category: 'Strings',
     brand: 'Babolat',
-    price: 99.99,
-    description:
-      'Sit dolore duis laborum laboris incididunt adipisicing magna deserunt incididunt excepteur.',
-    image: babolatPureStrike,
+    material: 'Polyester',
+    price: 19.99,
+    description: 'Laborum pariatur tempor dolor eu exercitation nulla.',
+    image: babolatRPMBlast,
     options: [
       {
-        'Grip Size': [
-          '4 1/8" (#1)',
-          '4 1/4" (#2)',
-          '4 3/8" (#3)',
-          '4 1/2" (#4)',
-          '4 5/8" (#5)'
-        ]
+        Gauge: ['15L/1.35mm', '16/1.30mm', '17/1.25mm', '18/1.20mm']
       },
       {
-        Strings: [
-          'Unstrung',
-          'Synthetic Gut - $10',
-          'Polyester - $15',
-          'Multifilament - $20',
-          'Natural Gut - $40'
-        ]
+        Color: ['Black', 'Orange']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Solinco Hyper-G',
+    category: 'Strings',
+    brand: 'Solinco',
+    material: 'Polyester',
+    price: 12.99,
+    description: 'Laboris dolore sunt laborum non cupidatat Lorem.',
+    image: solincoHyperG,
+    options: [
+      {
+        Gauge: ['16/1.30mm', '16L/1.25mm', '17/1.20mm']
+      },
+      {
+        Color: ['Green']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Luxilon ALU Power',
+    category: 'Strings',
+    brand: 'Luxilon',
+    material: 'Polyester',
+    price: 19.99,
+    description: 'Dolor reprehenderit incididunt duis anim do elit.',
+    image: luxilonALUPower,
+    options: [
+      {
+        Gauge: ['16/1.30mm', '16L/1.25mm', '17L/1.20mm', '18/1.15mm']
+      },
+      {
+        Color: ['Silver', 'Black', 'Teal']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Technifibre NRG2',
+    category: 'Strings',
+    brand: 'Technifibre',
+    material: 'Multifilament',
+    price: 19.99,
+    description:
+      'Reprehenderit occaecat aliqua amet non aute Lorem esse occaecat.',
+    image: technifibreNRG2,
+    options: [
+      {
+        Gauge: ['16/1.32mm', '17/1.24mm', '18/1.18mm']
+      },
+      {
+        Color: ['Natural', 'Black']
       }
     ],
     id: idIter.next().value

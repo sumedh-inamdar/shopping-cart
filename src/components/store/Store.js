@@ -22,6 +22,7 @@ export default function Store({ cart, setCart }) {
   const arrayWomensClothing = storeItems.filter(
     (item) => item.category === `Women's Clothing`
   );
+  const arrayStrings = storeItems.filter((item) => item.category === `Strings`);
 
   useEffect(() => {
     document
@@ -115,7 +116,13 @@ export default function Store({ cart, setCart }) {
           <Route path="/shoes" element={<Shoes setSection={setSection} />} />
           <Route
             path="/strings"
-            element={<Strings setSection={setSection} />}
+            element={<Strings items={arrayStrings} setSection={setSection} />}
+          />
+          <Route
+            path="/strings/:id"
+            element={
+              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
+            }
           />
         </Routes>
       </div>

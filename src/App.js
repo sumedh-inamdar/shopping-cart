@@ -1,10 +1,20 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useLocation, BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Store from './components/store/Store';
 import About from './components/About';
 import Checkout from './components/checkout/Checkout';
+
+function ScrollToTop(props) {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  // eslint-disable-next-line react/prop-types
+  return <>{props.children}</>;
+}
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -18,17 +28,19 @@ function App() {
             0
           )}
         />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/store/*"
-            element={<Store cart={cart} setCart={setCart} />}></Route>
-          <Route path="/about" element={<About />} />
-          <Route
-            path="/checkout"
-            element={<Checkout cart={cart} setCart={setCart} />}
-          />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/store/*"
+              element={<Store cart={cart} setCart={setCart} />}></Route>
+            <Route path="/about" element={<About />} />
+            <Route
+              path="/checkout"
+              element={<Checkout cart={cart} setCart={setCart} />}
+            />
+          </Routes>
+        </ScrollToTop>
       </BrowserRouter>
     </div>
   );
