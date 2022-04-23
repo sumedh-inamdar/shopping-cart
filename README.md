@@ -22,7 +22,7 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
     - [ ] Checkout / CheckoutItem
 - [x] Checkout Page
 - [ ] Home Page
-    - [ ] Add Featured Items
+    - [x] Add Featured Items
     - [ ] Remaining Items
 - [ ] About Page
     - [ ] Who are we?
