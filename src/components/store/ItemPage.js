@@ -9,50 +9,71 @@ import {
   setCartItemQuantity,
   calcCartItemPrice
 } from '../../utils/helperFunc';
+import ItemAddedModal from './ItemAddedModal';
 
 export default function ItemPage({ setSection, cart, setCart }) {
   const params = useParams();
   const item = getItemByID(params.id);
-  const [quantity, setQuantity] = useState(1);
-  const [options, setOptions] = useState(
-    item.options.map((option) => ({
+  const [cartItemObj, setCartItemObj] = useState({
+    item: getItemByID(params.id),
+    quantity: 1,
+    options: item.options.map((option) => ({
       [Object.keys(option)[0]]: Object.values(option)[0][0]
-    }))
-  );
+    })),
+    unitPrice: item.price,
+    id: uniqid()
+  });
+  const [viewModal, setViewModal] = useState(false);
 
   useEffect(() => {
     setSection(categoryRouteMapping.get(item.category));
   });
 
   function increaseQuantity() {
-    setQuantity(quantity + 1);
+    setCartItemObj({ ...cartItemObj, quantity: cartItemObj.quantity + 1 });
   }
   function decreaseQuantity() {
-    setQuantity(Math.max(quantity - 1, 1));
+    setCartItemObj({
+      ...cartItemObj,
+      quantity: Math.max(cartItemObj.quantity - 1, 1)
+    });
   }
   function addToCart() {
-    const cartItemObj = {
-      item: item,
-      quantity: quantity,
-      options: options,
-      unitPrice: calcCartItemPrice(item.price, options),
-      id: uniqid()
-    };
+    setCartItemObj({
+      ...cartItemObj,
+      unitPrice: calcCartItemPrice(cartItemObj.item.price, cartItemObj.options)
+    });
     const cartItem = findItemInCart(cartItemObj, cart);
     if (cartItem) {
       setCartItemQuantity(
         cart,
         setCart,
-        cartItem.quantity + quantity,
+        cartItem.quantity + cartItemObj.quantity,
         cartItem.id
       );
     } else {
       setCart([...cart, cartItemObj]);
     }
+    setViewModal(true);
+  }
+  function closeModal() {
+    const slideAnimation = [{ transform: 'translateX(384px)' }];
+
+    const slideOptions = {
+      duration: 200,
+      iterations: 1
+    };
+    let animation = document
+      .querySelector('#itemAdded')
+      .animate(slideAnimation, slideOptions);
+    animation.finished.then(() => setViewModal(false));
   }
 
   return (
     <div className="m-auto w-fit mt-10">
+      {viewModal ? (
+        <ItemAddedModal cartItem={cartItemObj} closeModal={closeModal} />
+      ) : undefined}
       <div className="text-4xl">{item.name}</div>
       <div className="flex">
         <img
@@ -68,12 +89,13 @@ export default function ItemPage({ setSection, cart, setCart }) {
             </div>
             <ItemOption
               options={item.options}
-              optionsState={options}
-              setOptions={setOptions}
+              cartItemObj={cartItemObj}
+              setCartItemObj={setCartItemObj}
             />
             <div>
               <div>
-                Quantity: <span className="font-light">{quantity}</span>
+                Quantity:{' '}
+                <span className="font-light">{cartItemObj.quantity}</span>
               </div>
               <div>
                 <button
@@ -84,9 +106,12 @@ export default function ItemPage({ setSection, cart, setCart }) {
                 <input
                   className="border-2 w-20 text-center font-light"
                   type="number"
-                  value={quantity}
+                  value={cartItemObj.quantity}
                   onChange={(e) =>
-                    setQuantity(Math.max(1, Number(e.target.value)))
+                    setCartItemObj({
+                      ...cartItemObj,
+                      quantity: Math.max(1, Number(e.target.value))
+                    })
                   }></input>
                 <button
                   className="border-2 bg-slate-200 w-6 hover:bg-slate-300"

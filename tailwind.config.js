@@ -41,6 +41,14 @@ module.exports = {
             opacity: '1',
             transform: 'translateX(0)'
           }
+        },
+        'modal-slide-in-left': {
+          '0%': {
+            transform: 'translateX(384px)'
+          },
+          '100%': {
+            transform: 'translateX(0)'
+          }
         }
       },
       animation: {
@@ -56,7 +64,9 @@ module.exports = {
         'fade-in-top-250': '1s ease-out 250ms forwards fade-in-top',
         'fade-in-top-500': '1s ease-out 500ms forwards fade-in-top',
         'fade-in-top-750': '1s ease-out 750ms forwards fade-in-top',
-        'fade-in-top-1000': '1s ease-out 1s forwards fade-in-top'
+        'fade-in-top-1000': '1s ease-out 1s forwards fade-in-top',
+        'modal-slide-left': '200ms forwards modal-slide-in-left',
+        'modal-slide-left-reverse': '200ms reverse modal-slide-in-left'
       }
     }
   },

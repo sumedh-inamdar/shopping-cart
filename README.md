@@ -15,8 +15,8 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 
 ## To do list
 - [x] Remaining store items
-- [ ] Item added popup
 - [ ] Side modal for shopping cart
+- [ ] Animation for modal entry and exit
 - [ ] Add mobile view support
     - [ ] ItemPage
     - [ ] Checkout / CheckoutItem
@@ -27,6 +27,7 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 - [ ] About Page
     - [ ] Who are we?
 - [ ] Footer
+- [ ] React DOM unit-tests
 
 ## Bugs to fix
 

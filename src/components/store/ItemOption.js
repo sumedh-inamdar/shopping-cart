@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ItemOption({ options, optionsState, setOptions }) {
+export default function ItemOption({ options, cartItemObj, setCartItemObj }) {
   return options.map((optionObj) => {
     const optionName = Object.keys(optionObj)[0];
-    const optionsValue = optionsState.find(
+    const optionsValue = cartItemObj.options.find(
       (option) => Object.keys(option)[0] === optionName
     )[optionName];
 
     function optionsHandler(event) {
       const optionValue = event.target.value;
-      const optionsStateCopy = optionsState.map((option) =>
+      const optionsStateCopy = cartItemObj.options.map((option) =>
         Object.assign({}, option)
       );
       const targetOption = optionsStateCopy.find(
         (option) => option[optionName]
       );
       targetOption[optionName] = optionValue;
-      setOptions(optionsStateCopy);
+      setCartItemObj({ ...cartItemObj, options: optionsStateCopy });
     }
     return (
       <div className="flex" key={optionName}>
@@ -38,6 +38,6 @@ export default function ItemOption({ options, optionsState, setOptions }) {
 }
 ItemOption.propTypes = {
   options: PropTypes.array,
-  optionsState: PropTypes.array,
-  setOptions: PropTypes.func
+  cartItemObj: PropTypes.object,
+  setCartItemObj: PropTypes.func
 };

@@ -12,10 +12,6 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
   const cartItemID = cartItem.id;
   const cartItemCost = cartItem.unitPrice * cartItemQty;
   const path = categoryRouteMapping.get(item.category);
-  // const arrayMoneyOptions = Object.values(itemOptions).filter((optionValue) =>
-  //   optionValue.startsWith('$')
-  // );
-  // console.log(arrayMoneyOptions);
 
   function increaseQuantity() {
     setQuantity(cartItemQty + 1, cartItemID);

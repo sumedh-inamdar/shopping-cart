@@ -28,7 +28,7 @@ export function calcCartItemPrice(unitPrice, options) {
   const optionsPrice = Object.values(mergedOptions)
     .filter((optionString) => optionString.includes('$'))
     .map((option) => Number(option.match(/\$\d+\.?\d+/gm)[0].slice(1)))
-    .reduce((prev, curr) => prev + curr);
+    .reduce((prev, curr) => prev + curr, 0);
   return unitPrice + optionsPrice;
 }
 

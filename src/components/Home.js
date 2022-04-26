@@ -12,7 +12,7 @@ function FeaturedCollections() {
     triggerOnce: true,
     threshold: 0.35
   });
-  console.log(inView);
+
   return (
     <div className="max-w-6xl mx-auto mt-12 pb-7 min-h-[550px]" ref={ref}>
       {inView ? (
@@ -60,6 +60,7 @@ function FeaturedCollections() {
     </div>
   );
 }
+
 export default function Home() {
   return (
     <div>
