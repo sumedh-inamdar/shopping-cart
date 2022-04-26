@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { categoryRouteMapping } from '../../data/data';
+import uniqid from 'uniqid';
 
 export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
   const item = cartItem.item;
@@ -40,7 +41,7 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
         <div className="flex-1 flex text-sm">
           <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             {cartItemOptions.map((option) => (
-              <div key={Object.keys(option)[0]} className="">
+              <div key={uniqid()} className="">
                 {Object.keys(option)[0]}:{' '}
                 <span className="font-light">{Object.values(option)[0]}</span>
               </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import uniqid from 'uniqid';
 
 export default function ItemAddedModal({ cartItem, closeModal }) {
   window.addEventListener('click', (event) => {
@@ -36,7 +37,7 @@ export default function ItemAddedModal({ cartItem, closeModal }) {
             <div className="text-lg">{cartItem.item.name}</div>
             <div className="text-sm">
               {cartItem.options.map((option) => (
-                <div key={Object.keys(option)[0]}>
+                <div key={uniqid()}>
                   {Object.keys(option)[0]}:{' '}
                   <span className="font-light">{Object.values(option)[0]}</span>
                 </div>

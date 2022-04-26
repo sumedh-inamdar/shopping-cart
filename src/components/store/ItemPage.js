@@ -53,6 +53,7 @@ export default function ItemPage({ setSection, cart, setCart }) {
       );
     } else {
       setCart([...cart, cartItemObj]);
+      setCartItemObj({ ...cartItemObj, id: uniqid() });
     }
     setViewModal(true);
   }
