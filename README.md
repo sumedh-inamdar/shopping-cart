@@ -15,8 +15,8 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 
 ## To do list
 - [x] Remaining store items
-- [ ] Side modal for shopping cart
-- [ ] Animation for modal entry and exit
+- [x] Side modal for shopping cart
+- [x] Animation for modal entry and exit
 - [ ] Add mobile view support
     - [ ] ItemPage
     - [ ] Checkout / CheckoutItem

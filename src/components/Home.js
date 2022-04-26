@@ -13,6 +13,14 @@ function FeaturedCollections() {
     threshold: 0.35
   });
 
+  // prevents animations from starting before images have loaded
+  document.body.classList.add('js-loading');
+  window.addEventListener('load', showPage);
+  function showPage() {
+    console.log('page loaded');
+    document.body.classList.remove('js-loading');
+  }
+
   return (
     <div className="max-w-6xl mx-auto mt-12 pb-7 min-h-[550px]" ref={ref}>
       {inView ? (

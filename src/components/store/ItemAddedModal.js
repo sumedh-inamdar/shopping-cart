@@ -3,18 +3,15 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import uniqid from 'uniqid';
+import { Link } from 'react-router-dom';
 
 export default function ItemAddedModal({ cartItem, closeModal }) {
-  window.addEventListener('click', (event) => {
-    if (event.target == document.querySelector('#my-modal')) {
-      closeModal();
-    }
-  });
   return (
     <div>
       <div
         className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
-        id="my-modal"></div>
+        id="my-modal"
+        onClick={closeModal}></div>
       <div
         className="fixed inset-y-0 right-0 w-96 shadow-lg bg-white py-6 px-4 animate-modal-slide-left"
         id="itemAdded">
@@ -51,9 +48,13 @@ export default function ItemAddedModal({ cartItem, closeModal }) {
             className="block w-full text-center border-2 py-2 transition-all hover:bg-slate-600 hover:text-white">
             Continue Shopping
           </button>
-          <button className="block w-full text-center border-2 py-2 bg-teal-400 transition-all hover:bg-teal-600 ">
-            View Cart & Checkout
-          </button>
+          <div>
+            <Link to="/checkout">
+              <button className="block w-full text-center border-2 py-2 bg-teal-400 transition-all hover:bg-teal-600 ">
+                View Cart & Checkout
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
