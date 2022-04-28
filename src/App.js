@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Store from './components/store/Store';
 import About from './components/About';
 import Checkout from './components/checkout/Checkout';
+import Footer from './components/Footer';
 
 function ScrollToTop(props) {
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
             />
           </Routes>
         </ScrollToTop>
+        <Footer />
       </BrowserRouter>
     </div>
   );

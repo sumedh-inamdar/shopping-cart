@@ -39,6 +39,10 @@ export default function ItemAddedModal({ cartItem, closeModal }) {
                   <span className="font-light">{Object.values(option)[0]}</span>
                 </div>
               ))}
+              <div>
+                Quantity:{' '}
+                <span className="font-light">{cartItem.quantity}</span>
+              </div>
             </div>
           </div>
         </div>

@@ -26,9 +26,9 @@
     @apply underline underline-offset-2 decoration-indigo-500 decoration-8 bg-slate-200 transition;
   }
 
-  .js-loading *,
-  .js-loading *:before,
-  .js-loading *:after {
+  .animate-hold,
+  .animate-hold:before,
+  .animate-hold:after {
     animation-play-state: paused !important;
   }
   
