@@ -24,13 +24,15 @@ function HomeSectionOne() {
   });
 
   return (
-    <div className="max-w-6xl mx-auto mt-12 pb-7 min-h-[550px]" ref={ref}>
+    <div
+      className="max-w-6xl py-12 md:py-32 px-6 mx-auto min-h-[350px]"
+      ref={ref}>
       {inView ? (
         <div>
-          <div className="text-4xl md:text-5xl mb-6 text-center md:py-7 animate-fade-in-top-0">
+          <div className="text-4xl md:text-5xl mb-6 text-center animate-fade-in-top-0">
             Featured Collections
           </div>
-          <ul className="text-center text-2xl font-light flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-6 mx-6">
+          <ul className="text-center text-2xl font-light flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-6">
             <Link to="/store/racquets/">
               <li className="space-y-4 cursor-pointer animate-fade-in-top-250 opacity-0 animate-hold">
                 <div className="hover:scale-105 transition-transform hover:text-red-500 duration-200">
@@ -87,32 +89,30 @@ function HomeSectionOne() {
 }
 function HomeSectionTwo() {
   return (
-    <div className="bg-slate-200">
-      <div className="max-w-6xl mx-auto my-12 pb-16 min-h-[550px]">
-        <div className="flex flex-col md:flex-row w-full pt-16">
-          <div className="flex-1 mx-6">
+    <div className="bg-slate-200 py-12 md:py-32 px-6">
+      <div className="max-w-6xl mx-auto min-h-[550px] space-y-16">
+        <div className="flex flex-col md:flex-row w-full space-x-0 md:space-x-6">
+          <div className="flex-1 mb-6 md:mb-0">
             <img className="shadow-xl" src={serve} alt="person serving" />
           </div>
-          <div className="flex-1 mx-6">
-            <p className="text-4xl md:text-5xl mt-12">Elevate your game</p>
-            <div className="text-lg md:text-xl mt-12 text-justify">
+          <div className="flex-1 space-y-6 h-min m-auto">
+            <p className="text-4xl md:text-5xl">Elevate your game</p>
+            <div className="text-lg md:text-xl text-justify">
               Step in and enable your finest game with the right gear. Our
               trained staff can help your pick the right racket, strings, or
               answer any questions.
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row w-full pt-16">
-          <div className="flex-1 mx-6">
-            <p className="text-4xl md:text-5xl mt-12 md:text-right">
-              Win with style
-            </p>
-            <div className="text-lg md:text-xl mt-12 md:text-right">
+        <div className="flex flex-col md:flex-row w-full space-x-0 md:space-x-6">
+          <div className="flex-1 space-y-6 h-min m-auto">
+            <p className="text-4xl md:text-5xl md:text-right">Win with style</p>
+            <div className="text-lg md:text-xl md:text-right">
               Feel amazing by winning in style with our fresh apparel collection
               from Nike, Adidas, and more!
             </div>
           </div>
-          <div className="flex-1 mx-6 order-first md:order-last">
+          <div className="flex-1 order-first md:order-last mb-6 md:mb-0">
             <img
               className="shadow-xl"
               src={style}
@@ -130,13 +130,13 @@ function HomeSectionThree() {
     threshold: 0.5
   });
   return (
-    <div className="bg-white min-h-[550px]" ref={ref}>
+    <div className="bg-white min-h-[350px] py-12 md:py-32 px-6" ref={ref}>
       {inView ? (
-        <div className="max-w-6xl mx-auto mt-12 pb-7 mx-6">
-          <div className="text-4xl md:text-5xl text-center md:py-7 animate-fade-in-top-0">
+        <div className="max-w-6xl mx-auto space-y-10 md:space-y-16">
+          <div className="text-4xl md:text-5xl text-center animate-fade-in-top-0">
             Why You{"'"}ll Love TENNSCENTRL
           </div>
-          <ul className="flex flex-col md:flex-row justify-between space-y-10 md:space-y-0 md:space-x-10 mt-8">
+          <ul className="flex flex-col md:flex-row justify-between space-y-10 md:space-y-0 md:space-x-6">
             <li className="flex-1 opacity-0 animate-fade-in-top-250">
               <img
                 className="h-52 rounded-full m-auto"

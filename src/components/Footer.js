@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="min-h-[200px] bg-indigo-500 text-white py-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row space-y-9 md:space-y-0 px-4">
-        <div className="flex-1 w-min space-y-4">
+    <footer className="min-h-[200px] bg-indigo-500 text-white py-6 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row space-y-9 md:space-y-0">
+        <div className="flex-1 space-y-4">
           <div className="text-xl font-bold">
             Join the TENNSCENTRL Mailing List
           </div>
@@ -26,12 +26,12 @@ export default function Footer() {
             <div className="font-bold">TENNSCENTRL</div>
             <li>
               <Link to="/about">
-                <div className="font-light">About</div>
+                <div className="font-light hover:font-normal">About</div>
               </Link>
             </li>
             <li>
               <Link to="/about">
-                <div className="font-light">Careers</div>
+                <div className="font-light hover:font-normal">Careers</div>
               </Link>
             </li>
           </ul>
@@ -39,22 +39,28 @@ export default function Footer() {
             <div className="font-bold">SHOP</div>
             <li>
               <Link to="/store/racquets">
-                <div className="font-light">Tennis Racquets</div>
+                <div className="font-light hover:font-normal">
+                  Tennis Racquets
+                </div>
               </Link>
             </li>
             <li>
               <Link to="/store/mensClothing">
-                <div className="font-light">Men{"'"}s Clothing</div>
+                <div className="font-light hover:font-normal">
+                  Men{"'"}s Clothing
+                </div>
               </Link>
             </li>
             <li>
               <Link to="/store/womensClothing">
-                <div className="font-light">Women{"'"}s Clothing</div>
+                <div className="font-light hover:font-normal">
+                  Women{"'"}s Clothing
+                </div>
               </Link>
             </li>
             <li>
               <Link to="/store/strings">
-                <div className="font-light">Strings</div>
+                <div className="font-light hover:font-normal">Strings</div>
               </Link>
             </li>
           </ul>
@@ -62,14 +68,14 @@ export default function Footer() {
             <div className="font-bold">CONTACT</div>
             <li>
               <a href="mailto:sinamdar@gmail.com">
-                <div className="font-light">Email</div>
+                <div className="font-light hover:font-normal">Email</div>
               </a>
             </li>
             <a
               href="https://github.com/sumedh-inamdar"
               target="_blank"
               rel="noreferrer">
-              <div className="font-light">Github</div>
+              <div className="font-light hover:font-normal">Github</div>
             </a>
           </ul>
         </div>
