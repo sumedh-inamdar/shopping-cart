@@ -20,28 +20,30 @@ function ScrollToTop(props) {
 function App() {
   const [cart, setCart] = useState([]);
   return (
-    <div id="app">
+    <div id="app" className="relative min-h-screen">
       <BrowserRouter>
-        <Nav
-          cartQty={cart.reduce(
-            (previousValue, currentValue) =>
-              previousValue + currentValue.quantity,
-            0
-          )}
-        />
-        <ScrollToTop>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/store/*"
-              element={<Store cart={cart} setCart={setCart} />}></Route>
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/checkout"
-              element={<Checkout cart={cart} setCart={setCart} />}
-            />
-          </Routes>
-        </ScrollToTop>
+        <div className="pb-[452px] md:pb-52">
+          <Nav
+            cartQty={cart.reduce(
+              (previousValue, currentValue) =>
+                previousValue + currentValue.quantity,
+              0
+            )}
+          />
+          <ScrollToTop>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/store/*"
+                element={<Store cart={cart} setCart={setCart} />}></Route>
+              <Route path="/about" element={<About />} />
+              <Route
+                path="/checkout"
+                element={<Checkout cart={cart} setCart={setCart} />}
+              />
+            </Routes>
+          </ScrollToTop>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

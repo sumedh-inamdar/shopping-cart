@@ -9,7 +9,8 @@ module.exports = {
         josefin: ['Josefin Sans', 'sans-serif']
       },
       backgroundImage: {
-        'tennis-court': "url('./assets/homepage-bg-red.jpg')"
+        'tennis-court':
+          "linear-gradient(rgba(0,0,0,0.5),  rgba(0,0,0,0.3)), url('./assets/about-bg.jpg')"
       },
       keyframes: {
         'fade-in-down': {
