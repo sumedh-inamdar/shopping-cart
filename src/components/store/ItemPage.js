@@ -71,19 +71,19 @@ export default function ItemPage({ setSection, cart, setCart }) {
   }
 
   return (
-    <div className="m-auto w-fit mt-10">
+    <div className="max-w-2xl py-12 px-6 mx-auto">
       {viewModal ? (
         <ItemAddedModal cartItem={cartItemObj} closeModal={closeModal} />
       ) : undefined}
-      <div className="text-4xl">{item.name}</div>
-      <div className="flex">
+      <div className="text-4xl text-center md:text-left mb-6">{item.name}</div>
+      <div className="flex flex-col md:flex-row md:space-x-8">
         <img
-          className="m-4 max-w-[240px] hover:scale-110 transition-transform"
+          className="m-auto max-w-[240px] hover:scale-105 transition-transform"
           src={item.image}
           alt={item.name}
         />
-        <div className="flex flex-col justify-around flex-1 max-w-sm text-xl m-4">
-          <div className="mb-3">{item.description}</div>
+        <div className="flex flex-col justify-around flex-1 text-xl m-4">
+          <div className="mb-4">{item.description}</div>
           <div className="space-y-4 text-lg">
             <div>
               Unit Price: <span className="font-light">${item.price}</span>
@@ -123,7 +123,7 @@ export default function ItemPage({ setSection, cart, setCart }) {
             </div>
           </div>
           <button
-            className="block px-3 py-2 mt-3 bg-lime-200 hover:bg-lime-300"
+            className="block px-3 py-2 mt-4 bg-lime-200 hover:bg-lime-300"
             onClick={addToCart}>
             Add to Cart
           </button>

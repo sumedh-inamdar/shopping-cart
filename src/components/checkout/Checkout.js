@@ -93,7 +93,7 @@ export default function Checkout({ cart, setCart }) {
     );
   }
   return (
-    <div className="w-[480px] mx-auto my-12">
+    <div className="md:w-[540px] px-6 mx-auto my-12">
       {cart.length > 0 ? <CheckoutList /> : <NoItemsBlock />}
     </div>
   );

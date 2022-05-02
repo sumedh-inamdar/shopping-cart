@@ -22,14 +22,16 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
   }
   return (
     <li className="w-full px-8 py-4 flex bg-slate-200">
-      <div className="w-[60px] bg-white flex">
-        <Link to={`/store/${path}/${item.id}`}>
-          <img
-            className="max-w-full h-auto p-2 m-auto"
-            src={item.image}
-            alt={item.name}
-          />
-        </Link>
+      <div className="w-[60px] bg-white flex items-center">
+        <div className="h-fit">
+          <Link to={`/store/${path}/${item.id}`}>
+            <img
+              className="max-w-full h-auto p-2 m-auto"
+              src={item.image}
+              alt={item.name}
+            />
+          </Link>
+        </div>
       </div>
       <div className="flex-1 ml-6 flex flex-col">
         <div className="text-xl flex justify-between">
@@ -38,7 +40,7 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
           </Link>
           <div className="font-light">${cartItemCost.toFixed(2)}</div>
         </div>
-        <div className="flex-1 flex text-sm">
+        <div className="flex-1 flex flex-row text-sm">
           <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             {cartItemOptions.map((option) => (
               <div key={uniqid()} className="">

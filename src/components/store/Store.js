@@ -4,8 +4,6 @@ import { categoryRouteMapping, storeItems } from '../../data/data';
 import Clothing from './Clothing';
 import ItemPage from './ItemPage';
 import Racquets from './Racquets';
-import Shoes from './Shoes';
-// import StoreHome from './StoreHome';
 import Strings from './Strings';
 import PropTypes from 'prop-types';
 
@@ -43,7 +41,7 @@ export default function Store({ cart, setCart }) {
         <select
           value={section}
           onChange={handleSelect}
-          className="bg-gradient-to-r from-teal-200 to-indigo-200 px-2 py-3">
+          className="bg-gradient-to-r from-teal-200 to-indigo-200 px-2 py-3 w-full text-center">
           {[...setCategories].map((category) => {
             const path = categoryRouteMapping.get(category);
             return (
@@ -68,7 +66,7 @@ export default function Store({ cart, setCart }) {
           })}
         </ul>
       </div>
-      <div className="flex-1 mx-5">
+      <div className="flex-1">
         <Routes>
           <Route path="/" element={<Navigate to={`./${section}`} />} />
           <Route
@@ -113,7 +111,6 @@ export default function Store({ cart, setCart }) {
               <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
             }
           />
-          <Route path="/shoes" element={<Shoes setSection={setSection} />} />
           <Route
             path="/strings"
             element={<Strings items={arrayStrings} setSection={setSection} />}

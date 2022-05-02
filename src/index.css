@@ -23,7 +23,7 @@
     @apply  w-fit px-3 py-1
   }
   .activeSection {
-    @apply underline underline-offset-2 decoration-indigo-500 decoration-8 bg-slate-200 transition;
+    @apply underline underline-offset-2 decoration-indigo-500 decoration-8 bg-slate-200 text-black transition;
   }
 
   .animate-hold,

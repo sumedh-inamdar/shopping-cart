@@ -9,10 +9,12 @@ export default function Clothing({ items, section, setSection }) {
     setSection(section);
   });
   return (
-    <div className="space-y-14 mt-5 md:mt-10">
+    <div className="space-y-10 my-14">
       {[...setType].map((type) => (
         <div key={type}>
-          <div className="text-3xl font-medium my-3">{type}</div>
+          <div className="text-3xl md:text-4xl font-medium my-3 text-center md:text-left">
+            {type}
+          </div>
           <div className="grid gap-4 grid-cols-1 md:grid-cols-3 md:min-w-[600px]">
             {items
               .filter((item) => item.type === type)

@@ -27,6 +27,10 @@ import babolatRPMBlast from '../assets/strings/babolat-rpmBlast.jpg';
 import solincoHyperG from '../assets/strings/solinco-hyperG.jpg';
 import luxilonALUPower from '../assets/strings/luxilon-ALUPower.jpg';
 import technifibreNRG2 from '../assets/strings/technifibre-nrg2.jpg';
+import headVelocityMLT from '../assets/strings/head-velocityMLT.jpg';
+import wilsonNXT from '../assets/strings/wilson-nxt.jpg';
+import babolatVSTouch from '../assets/strings/babolat-vsTouch.jpg';
+import luxilonNaturalGut from '../assets/strings/luxilon-naturalGut.jpg';
 
 import { itemID } from './itemID';
 
@@ -675,6 +679,80 @@ export const storeItems = [
       },
       {
         Color: ['Natural', 'Black']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Head Velocity MLT',
+    category: 'Strings',
+    brand: 'Head',
+    material: 'Multifilament',
+    price: 19.99,
+    description: 'Quis deserunt mollit consectetur ut.',
+    image: headVelocityMLT,
+    options: [
+      {
+        Gauge: ['16/1.30mm', '17/1.25mm']
+      },
+      {
+        Color: ['Natural', 'Black']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Wilson NXT',
+    category: 'Strings',
+    brand: 'Wilson',
+    material: 'Multifilament',
+    price: 19.99,
+    description: 'Incididunt excepteur magna reprehenderit commodo in.',
+    image: wilsonNXT,
+    options: [
+      {
+        Gauge: ['16/1.30mm', '17/1.24mm']
+      },
+      {
+        Color: ['Natural', 'Black']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Babolat Touch VS',
+    category: 'Strings',
+    brand: 'Babolat',
+    material: 'Natural Gut',
+    price: 19.99,
+    description:
+      'Nisi sunt pariatur ad labore voluptate aliqua officia do occaecat consequat dolor.',
+    image: babolatVSTouch,
+    options: [
+      {
+        Gauge: ['15L/1.35mm', '16/1.30mm', '17/1.25mm']
+      },
+      {
+        Color: ['Natural']
+      }
+    ],
+    id: idIter.next().value
+  },
+  {
+    name: 'Luxilon Natural Gut',
+    category: 'Strings',
+    brand: 'Luxilon',
+    material: 'Natural Gut',
+    price: 19.99,
+    description:
+      'Sit excepteur id ipsum enim id sunt sit enim incididunt veniam non in.',
+    image: luxilonNaturalGut,
+    options: [
+      {
+        Gauge: ['16/1.30mm', '16L/1.25mm']
+      },
+      {
+        Color: ['Natural']
       }
     ],
     id: idIter.next().value

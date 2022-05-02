@@ -13,7 +13,7 @@ export default function ItemAddedModal({ cartItem, closeModal }) {
         id="my-modal"
         onClick={closeModal}></div>
       <div
-        className="fixed inset-y-0 right-0 w-96 shadow-lg bg-white py-6 px-4 animate-modal-slide-left"
+        className="fixed inset-y-0 right-0 w-[50vw] md:w-96 shadow-lg bg-white py-6 px-4 animate-modal-slide-left"
         id="itemAdded">
         <div className="flex justify-between content-center w-full text-xl">
           <div className="h-fit">Item Added!</div>
@@ -24,9 +24,9 @@ export default function ItemAddedModal({ cartItem, closeModal }) {
           </div>
         </div>
         <hr className="border-1 border-slate-200 my-2" />
-        <div className="flex mb-2">
+        <div className="flex flex-col md:flex-row mb-2">
           <img
-            className="w-16 h-auto p-2 mx-2"
+            className="w-16 h-auto p-2 mx-auto md:mx-2"
             src={cartItem.item.image}
             alt={cartItem.item.name}
           />

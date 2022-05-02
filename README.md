@@ -19,8 +19,8 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 - [x] Animation for modal entry and exit
 - [ ] Add mobile view support
     - [x] HomePage
-    - [ ] ItemPage
-    - [ ] Checkout / CheckoutItem
+    - [x] ItemPage
+    - [x] Checkout / CheckoutItem
 - [x] Checkout Page
 - [x] Home Page
     - [x] Add Featured Items
@@ -32,6 +32,8 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 
 ## Bugs to fix
 
-- [ ] Space below footer on empty checkout page
+- [x] Space below footer on empty checkout page
+- [ ] text-underline-offset property rendering unexpected on Safari 15.3
+
 
 ## Future work
