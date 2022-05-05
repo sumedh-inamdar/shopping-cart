@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import Store from './components/store/Store';
 import About from './components/About';
 import Checkout from './components/checkout/Checkout';

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function MobileMenu({ clickHandler }) {
   return (
-    <div className="transition duration-300" onClick={clickHandler}>
+    <div className="transition duration-300 bg-black/50" onClick={clickHandler}>
       <ul className="">
         <li className="active">
           <Link

@@ -13,10 +13,10 @@ export default function HamburgerButton({
           setMobileMenuVisible(!mobileMenuVisible);
         }}>
         {mobileMenuVisible ? (
-          <div className="text-4xl w-10 h-10 pt-1">X</div>
+          <div className="text-4xl w-8 h-8 pt-1">X</div>
         ) : (
           <svg
-            className="w-10 h-10"
+            className="w-8 h-8"
             x-show="!showMenu"
             fill="none"
             strokeLinecap="round"
