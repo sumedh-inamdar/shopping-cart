@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav';
+import Nav from './components/Nav/Nav';
 import Home from './components/Home';
 import Store from './components/store/Store';
 import About from './components/About';
@@ -35,7 +35,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route
                 path="/store/*"
-                element={<Store cart={cart} setCart={setCart} />}></Route>
+                element={<Store cart={cart} setCart={setCart} />}
+              />
               <Route path="/about" element={<About />} />
               <Route
                 path="/checkout"
