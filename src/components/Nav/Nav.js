@@ -28,7 +28,7 @@ export default function Nav({ cartQty }) {
 
   return (
     <nav className="bg-gradient-to-r from-teal-500 to-indigo-500 text-white">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between">
           <HamburgerButton
             mobileMenuVisible={mobileMenuVisible}

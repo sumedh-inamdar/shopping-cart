@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, Link, Navigate, useNavigate } from 'react-router-dom';
-import { categoryRouteMapping, storeItems } from '../../data/data';
-import Clothing from './Clothing';
-import ItemPage from './ItemPage';
-import Racquets from './Racquets';
-import Strings from './Strings';
-import PropTypes from 'prop-types';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { storeItems } from '../../data/data';
+import Clothing from './sections/Clothing';
+import ItemPage from './ItemPage/ItemPage';
+import Racquets from './sections/Racquets';
+import Strings from './sections/Strings';
+import StoreDropdown from './StoreDropdown';
+import StoreNav from './StoreNav';
 
-export default function Store({ cart, setCart }) {
+export default function Store() {
   const [section, setSection] = useState('racquets');
-  const navigate = useNavigate();
-  const setCategories = new Set(storeItems.map((item) => item.category));
+
   const arrayRacquets = storeItems.filter(
     (item) => item.category === 'Tennis Racquets'
   );
@@ -22,6 +22,7 @@ export default function Store({ cart, setCart }) {
   );
   const arrayStrings = storeItems.filter((item) => item.category === `Strings`);
 
+  // applies styling to active store section in side nav
   useEffect(() => {
     document
       .querySelectorAll(`.section`)
@@ -29,42 +30,13 @@ export default function Store({ cart, setCart }) {
     document.querySelector(`#${section}`).classList.add('activeSection');
   }, [section]);
 
-  function handleSelect(event) {
-    const path = event.target.value;
-    setSection(path);
-    navigate(`./${path}`);
-  }
-
   return (
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row px-6">
       <div className="md:hidden mx-5 mt-5 text-3xl">
-        <select
-          value={section}
-          onChange={handleSelect}
-          className="bg-gradient-to-r from-teal-200 to-indigo-200 px-2 py-3 w-full text-center">
-          {[...setCategories].map((category) => {
-            const path = categoryRouteMapping.get(category);
-            return (
-              <option key={path} value={path}>
-                {category}
-              </option>
-            );
-          })}
-        </select>
+        <StoreDropdown section={section} setSection={setSection} />
       </div>
       <div className="hidden md:block basis-60 mt-10 shrink-0">
-        <ul className="space-y-6 mx-6">
-          {[...setCategories].map((category) => {
-            const path = categoryRouteMapping.get(category);
-            return (
-              <li id={path} className="section" key={path}>
-                <Link to={`/store/${path}`} onClick={() => setSection(path)}>
-                  {category}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <StoreNav setSection={setSection} />
       </div>
       <div className="flex-1">
         <Routes>
@@ -75,9 +47,7 @@ export default function Store({ cart, setCart }) {
           />
           <Route
             path="/racquets/:id"
-            element={
-              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
-            }
+            element={<ItemPage setSection={setSection} />}
           />
           <Route
             path="/mensClothing"
@@ -91,9 +61,7 @@ export default function Store({ cart, setCart }) {
           />
           <Route
             path="/mensClothing/:id"
-            element={
-              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
-            }
+            element={<ItemPage setSection={setSection} />}
           />
           <Route
             path="/womensClothing"
@@ -107,9 +75,7 @@ export default function Store({ cart, setCart }) {
           />
           <Route
             path="/womensClothing/:id"
-            element={
-              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
-            }
+            element={<ItemPage setSection={setSection} />}
           />
           <Route
             path="/strings"
@@ -117,16 +83,10 @@ export default function Store({ cart, setCart }) {
           />
           <Route
             path="/strings/:id"
-            element={
-              <ItemPage setSection={setSection} cart={cart} setCart={setCart} />
-            }
+            element={<ItemPage setSection={setSection} />}
           />
         </Routes>
       </div>
     </div>
   );
 }
-Store.propTypes = {
-  cart: PropTypes.array,
-  setCart: PropTypes.func
-};

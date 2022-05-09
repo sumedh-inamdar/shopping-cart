@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function HamburgerButton({
   setMobileMenuVisible,
@@ -13,7 +15,9 @@ export default function HamburgerButton({
           setMobileMenuVisible(!mobileMenuVisible);
         }}>
         {mobileMenuVisible ? (
-          <div className="text-4xl w-8 h-8 pt-1">X</div>
+          <div className="text-4xl w-8 h-8">
+            <FontAwesomeIcon icon={faXmark} />
+          </div>
         ) : (
           <svg
             className="w-8 h-8"

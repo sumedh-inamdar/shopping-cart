@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import ItemCard from './ItemCard';
+import ItemCard from '../ItemCard';
 
 export default function Racquets({ items, setSection }) {
   const setBrands = new Set(items.map((item) => item.brand));

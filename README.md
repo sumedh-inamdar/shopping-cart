@@ -8,10 +8,14 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 
 ## Lessons learned
 
+### Technologies
 - React-Router-DOM
 - React Testing Library
 - Tailwind CSS
 - CSS Animations (custom keyframes, delays, fill-mode, etc..)
+
+### Bugs
+* Avoid nesting components to avoid re-render issues (auto lose input focus)
 
 ## To do list
 - [x] Remaining store items

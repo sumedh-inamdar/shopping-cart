@@ -40,3 +40,9 @@ export function setCartItemQuantity(cart, setCart, qty, cartItemID) {
   targetCartItem.quantity = qty;
   setCart(cartCopy);
 }
+
+export function calcCartTotal(cart) {
+  return cart
+    .map((cartItem) => cartItem.unitPrice * cartItem.quantity)
+    .reduce((prev, curr) => prev + curr);
+}

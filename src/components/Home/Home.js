@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div id="home">
       <div className="bg-gradient-to-r from-teal-500 to-indigo-500">
-        <div className="h-[540px] md:h-[720px] max-w-6xl mx-auto flex ">
+        <div className="h-[540px] md:h-[720px] max-w-6xl mx-auto flex px-6">
           <div className="flex-1 h-full">
             <div className="flex flex-col h-full justify-center mx-8 md:mx-0 relative md:left-1/4 md:w-3/4 space-y-7 text-white">
               <div className="flex flex-col text-6xl space-y-3">

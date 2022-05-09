@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { categoryRouteMapping } from '../../data/data';
 import uniqid from 'uniqid';
 
@@ -19,6 +19,17 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
   }
   function decreaseQuantity() {
     setQuantity(Math.max(cartItemQty - 1, 1), cartItemID);
+  }
+  function inputChangeHandler(event) {
+    const input = event.target;
+    input.setCustomValidity('');
+
+    if (input.checkValidity()) {
+      setQuantity(Number(event.target.value), cartItemID);
+    } else {
+      input.setCustomValidity('Quantity must be between 1 and 100');
+      input.reportValidity();
+    }
   }
   return (
     <li className="w-full px-8 py-4 flex bg-slate-200">
@@ -51,26 +62,35 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
           </div>
 
           <div className="flex-1 flex flex-col justify-start space-y-2 mt-2 ml-2">
-            <div>
+            <div className="flex flex-col md:flex-row">
               <span>Quantity: </span>
-              <input
-                className="border-2 text-center font-light w-8"
-                value={cartItemQty}
-                onChange={(e) =>
-                  setQuantity(Math.max(1, Number(e.target.value)), cartItemID)
-                }
-                type="number"></input>
-              <div className="inline divide-x-2 divide-slate-400">
-                <button
-                  className="ml-2 bg-slate-300 w-6 hover:bg-slate-400"
-                  onClick={increaseQuantity}>
-                  +
-                </button>
-                <button
-                  className="bg-slate-300 w-6 hover:bg-slate-400"
-                  onClick={decreaseQuantity}>
-                  -
-                </button>
+              <div className="flex w-full justify-start items-center h-6 md:h-6 mx-2">
+                <input
+                  className="border-2 text-center font-light w-8 h-full"
+                  value={cartItemQty}
+                  min="1"
+                  max="100"
+                  onChange={inputChangeHandler}
+                  type="number"
+                />
+                <div className="flex max-w-[56px] ml-2 flex-1 inline divide-x-2 divide-slate-400 text-white h-full font-light">
+                  <button
+                    className="flex-1 bg-indigo-500 md:w-6 h-full hover:bg-indigo-600"
+                    onClick={increaseQuantity}>
+                    <FontAwesomeIcon
+                      icon={faPlus}
+                      className="h-3/4 align-middle"
+                    />
+                  </button>
+                  <button
+                    className="flex-1 bg-indigo-400 h-full hover:bg-indigo-500"
+                    onClick={decreaseQuantity}>
+                    <FontAwesomeIcon
+                      icon={faMinus}
+                      className="h-3/4 align-middle"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
             <button
