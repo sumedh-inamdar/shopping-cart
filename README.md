@@ -14,30 +14,23 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 - Tailwind CSS
 - CSS Animations (custom keyframes, delays, fill-mode, etc..)
 
-### Bugs
+### Debugging takeaways
 * Avoid nesting components to avoid re-render issues (auto lose input focus)
+* jest-dom matchers do not work well with Tailwind CSS classes
 
-## To do list
-- [x] Remaining store items
-- [x] Side modal for shopping cart
-- [x] Animation for modal entry and exit
-- [ ] Add mobile view support
-    - [x] HomePage
-    - [x] ItemPage
-    - [x] Checkout / CheckoutItem
-- [x] Checkout Page
-- [x] Home Page
-    - [x] Add Featured Items
-    - [x] Remaining Items
-- [x] About Page
-    - [x] Who are we?
-- [x] Footer
-- [ ] React DOM unit-tests
+## Testing List
+
+### Unit Tests
+- [x] Nav: Mobile menu rendered on click, shopping cart quantity displayed
+
+### Integration Tests
+
+### End to End Tests
+- [ ] Navigate to store, add different items, and go to checkout
 
 ## Bugs to fix
 
 - [x] Space below footer on empty checkout page
 - [ ] text-underline-offset property rendering unexpected on Safari 15.3
-
 
 ## Future work

@@ -11,6 +11,7 @@ export default function HamburgerButton({
     <div className="md:hidden flex items-center">
       <button
         className="outline-none mobile-menu-button"
+        aria-label="Hamburger"
         onClick={() => {
           setMobileMenuVisible(!mobileMenuVisible);
         }}>

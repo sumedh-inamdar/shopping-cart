@@ -9,6 +9,7 @@ export default function MobileMenu({ clickHandler }) {
         <li className="active">
           <Link
             to="/"
+            aria-label="home-mobile-menu"
             className="block text-sm px-4 py-4 text-white hover:bg-green-600 font-semibold">
             HOME
           </Link>

@@ -28,13 +28,7 @@ function App() {
       <BrowserRouter>
         <div className="pb-[452px] md:pb-52">
           <CartContext.Provider value={cart}>
-            <Nav
-              cartQty={cart.reduce(
-                (previousValue, currentValue) =>
-                  previousValue + currentValue.quantity,
-                0
-              )}
-            />
+            <Nav />
             <ScrollToTop>
               <SetCartContext.Provider value={setCart}>
                 <Routes>

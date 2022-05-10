@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component snapshot check 1`] = `
+<div>
+  <nav
+    class="bg-gradient-to-r from-teal-500 to-indigo-500 text-white"
+  >
+    <div
+      class="max-w-6xl mx-auto px-6"
+    >
+      <div
+        class="flex justify-between"
+      >
+        <div
+          class="md:hidden flex items-center"
+        >
+          <button
+            aria-label="Hamburger"
+            class="outline-none mobile-menu-button"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              x-show="!showMenu"
+            >
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex space-x-7 min-w-fit"
+        >
+          <div>
+            <a
+              class="flex items-center text-2xl md:text-4xl py-4 px-2"
+              href="/"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-pied-piper-square mr-2 md:pb-2.5"
+                data-icon="pied-piper-square"
+                data-prefix="fab"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M32 419L0 479.2l.8-328C.8 85.3 54 32 120 32h327.2c-93 28.9-189.9 94.2-253.9 168.6C122.7 282 82.6 338 32 419M448 32S305.2 98.8 261.6 199.1c-23.2 53.6-28.9 118.1-71 158.6-28.9 27.8-69.8 38.2-105.3 56.3-23.2 12-66.4 40.5-84.9 66h328.4c66 0 119.3-53.3 119.3-119.2-.1 0-.1-328.8-.1-328.8z"
+                  fill="currentColor"
+                />
+              </svg>
+              <div
+                class="flex flex-row justify-start content-center pt-2.5 md:pt-0"
+              >
+                <div
+                  class="font-bold"
+                >
+                  TENNS
+                </div>
+                <div
+                  class="font-light"
+                >
+                  CENTRL
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            class="hidden md:flex items-center space-x-1"
+          >
+            <a
+              class="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
+              href="/"
+            >
+              HOME
+            </a>
+            <a
+              class="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
+              href="/store"
+            >
+              STORE
+            </a>
+            <a
+              class="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
+              href="/about"
+            >
+              ABOUT
+            </a>
+          </div>
+        </div>
+        <div
+          class="relative flex items-center pt-2.5"
+        >
+          <a
+            aria-label="shopping-cart"
+            class="text-2xl py-2 px-2 hover:text-zinc-600 transition duration-300"
+            href="/checkout"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-cart-shopping "
+              data-icon="cart-shopping"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"
+                fill="currentColor"
+              />
+            </svg>
+            <div
+              class="absolute top-[10px] left-[25px] bg-orange-600 rounded-[50%] h-6 w-6 m-auto"
+            >
+              <div
+                class="text-center w-full h-full text-base"
+              >
+                0
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

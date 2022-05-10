@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import MobileMenu from './MobileMenu';
 import ShoppingCart from './ShoppingCart';
 import DesktopMenu from './DesktopMenu';
 import HamburgerButton from './HamburgerButton';
 import CompanyLogo from './CompanyLogo';
 
-export default function Nav({ cartQty }) {
+export default function Nav() {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   useEffect(() => {
@@ -38,13 +37,10 @@ export default function Nav({ cartQty }) {
             <CompanyLogo clickHandler={closeMobileMenu} />
             <DesktopMenu />
           </div>
-          <ShoppingCart clickHandler={closeMobileMenu} cartQty={cartQty} />
+          <ShoppingCart clickHandler={closeMobileMenu} />
         </div>
       </div>
       {mobileMenuVisible && <MobileMenu clickHandler={closeMobileMenu} />}
     </nav>
   );
 }
-Nav.propTypes = {
-  cartQty: PropTypes.number.isRequired
-};
