@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div>
+  <div
+    id="home"
+  >
+    <div
+      class="bg-gradient-to-r from-teal-500 to-indigo-500"
+    >
+      <div
+        class="h-[540px] md:h-[720px] max-w-6xl mx-auto flex px-6"
+      >
+        <div
+          class="flex-1 h-full"
+        >
+          <div
+            class="flex flex-col h-full justify-center mx-8 md:mx-0 relative md:left-1/4 md:w-3/4 space-y-7 text-white"
+          >
+            <div
+              class="flex flex-col text-6xl space-y-3"
+            >
+              <div
+                class="opacity-0 animate-fade-in-left-250"
+              >
+                GAME
+              </div>
+              <div
+                class="opacity-0 animate-fade-in-left-500"
+              >
+                SET
+              </div>
+              <div
+                class="opacity-0 animate-fade-in-left-750"
+              >
+                MATCH
+              </div>
+            </div>
+            <div
+              class="text-xl opacity-0 animate-fade-in-top-1000"
+            >
+              Your number one premier tennis equipment supplier.
+            </div>
+            <a
+              class="opacity-0 animate-fade-in-top-1000 md:w-3/4 bg-blue-400 hover:bg-blue-500 transition-colors pt-1 border-2"
+              href="/store"
+            >
+              <button
+                class="w-full"
+              >
+                Shop Now
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="hidden md:block flex-1 m-auto mx-6"
+        >
+          <img
+            class="border-2 object-scale-down rounded-lg drop-shadow-lg opacity-0 animate-fade-in-top-1000 animate-hold"
+            src="homepage-bg-red.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="max-w-6xl py-12 md:py-32 px-6 mx-auto min-h-[350px]"
+    />
+    <div
+      class="bg-slate-100 py-12 md:py-32 px-6"
+    >
+      <div
+        class="max-w-6xl mx-auto min-h-[550px] space-y-16"
+      >
+        <div
+          class="flex flex-col md:flex-row w-full space-x-0 md:space-x-6"
+        >
+          <div
+            class="flex-1 mb-6 md:mb-0"
+          >
+            <img
+              alt="person serving"
+              class="shadow-xl"
+              src="homepage-serve.jpg"
+            />
+          </div>
+          <div
+            class="flex-1 space-y-6 h-min m-auto"
+          >
+            <p
+              class="text-4xl md:text-5xl"
+            >
+              Elevate your game
+            </p>
+            <div
+              class="text-lg md:text-xl text-justify"
+            >
+              Step in and enable your finest game with the right gear. Our trained staff can help your pick the right racket, strings, or answer any questions.
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row w-full space-x-0 md:space-x-6"
+        >
+          <div
+            class="flex-1 space-y-6 h-min m-auto"
+          >
+            <p
+              class="text-4xl md:text-5xl md:text-right"
+            >
+              Win with style
+            </p>
+            <div
+              class="text-lg md:text-xl md:text-right"
+            >
+              Feel amazing by winning in style with our fresh apparel collection from Nike, Adidas, and more!
+            </div>
+          </div>
+          <div
+            class="flex-1 order-first md:order-last mb-6 md:mb-0"
+          >
+            <img
+              alt="girl sitting on court"
+              class="shadow-xl"
+              src="homepage-style.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-white min-h-[350px] py-12 md:py-32 px-6"
+    />
+  </div>
+</div>
+`;

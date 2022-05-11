@@ -23,6 +23,7 @@ export default function ItemOption({ options, cartItemObj, setCartItemObj }) {
       <div className="flex" key={optionName}>
         <div className="w-fit">{optionName}: </div>
         <select
+          aria-label={optionName}
           value={optionsValue}
           onChange={optionsHandler}
           className="ml-2 font-light">

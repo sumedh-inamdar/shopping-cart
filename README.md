@@ -22,11 +22,14 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 
 ### Unit Tests
 - [x] Nav: Mobile menu rendered on click, shopping cart quantity displayed
+- [x] Home: Load content with intersection observer
 
 ### Integration Tests
+- [x] Site navigation
+- [ ] Navigate to store, add different items, and go to checkout
 
 ### End to End Tests
-- [ ] Navigate to store, add different items, and go to checkout
+
 
 ## Bugs to fix
 

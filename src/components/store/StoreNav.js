@@ -7,7 +7,7 @@ export default function StoreNav({ setSection }) {
   const setCategories = new Set(storeItems.map((item) => item.category));
 
   return (
-    <ul className="space-y-6 mx-6">
+    <ul className="space-y-6 mx-6" aria-label="store-nav-list">
       {[...setCategories].map((category) => {
         const path = categoryRouteMapping.get(category);
         return (
