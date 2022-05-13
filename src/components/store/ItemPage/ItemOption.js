@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { calcCartItemPrice } from '../../../utils/helperFunc';
 
 export default function ItemOption({ options, cartItemObj, setCartItemObj }) {
   return options.map((optionObj) => {
@@ -17,7 +18,11 @@ export default function ItemOption({ options, cartItemObj, setCartItemObj }) {
         (option) => option[optionName]
       );
       targetOption[optionName] = optionValue;
-      setCartItemObj({ ...cartItemObj, options: optionsStateCopy });
+      setCartItemObj({
+        ...cartItemObj,
+        options: optionsStateCopy,
+        unitPrice: calcCartItemPrice(cartItemObj.item.price, optionsStateCopy)
+      });
     }
     return (
       <div className="flex" key={optionName}>

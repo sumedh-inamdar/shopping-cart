@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  findItemInCart,
-  setCartItemQuantity,
-  calcCartItemPrice
-} from '../../../utils/helperFunc';
+import { findItemInCart, setCartItemQuantity } from '../../../utils/helperFunc';
 import { useContext } from 'react';
 import { CartContext, SetCartContext } from '../../../App';
 import PropTypes from 'prop-types';
@@ -18,10 +14,6 @@ export default function AddButton({
   const setCart = useContext(SetCartContext);
 
   function addToCart() {
-    setCartItemObj({
-      ...cartItemObj,
-      unitPrice: calcCartItemPrice(cartItemObj.item.price, cartItemObj.options)
-    });
     const cartItem = findItemInCart(cartItemObj, cart);
     if (cartItem) {
       setCartItemQuantity(
