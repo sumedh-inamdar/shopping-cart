@@ -23,6 +23,9 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 ### Unit Tests
 - [x] Nav: Mobile menu rendered on click, shopping cart quantity displayed
 - [x] Home: Load content with intersection observer
+- [x] ItemOption: Select element calls hook onChange with correct unitPrice, options
+- [x] ItemQuantity: Text input and increment / decrement buttons. Input validity test.
+- [x] AddButton: Mock setCart hook and check for correct argurments - empty cart and existing items
 
 ### Integration Tests
 - [x] Site navigation

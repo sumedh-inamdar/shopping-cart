@@ -20,6 +20,21 @@ describe('Quantity user input test', () => {
     expect(setCartItemObj).toHaveBeenNthCalledWith(3, { quantity: 23 });
   });
 
+  it('input validity test', () => {
+    render(
+      <ItemQuantity cartItemObj={cartItemObj} setCartItemObj={setCartItemObj} />
+    );
+
+    userEvent.clear(screen.getByRole('spinbutton'));
+    userEvent.type(screen.getByRole('spinbutton'), '-5');
+    expect(setCartItemObj).toHaveBeenCalledTimes(2);
+    expect(screen.getByRole('spinbutton')).toBeInvalid();
+    userEvent.clear(screen.getByRole('spinbutton'));
+    userEvent.type(screen.getByRole('spinbutton'), '5');
+    expect(setCartItemObj).toHaveBeenCalledTimes(4);
+    expect(screen.getByRole('spinbutton')).not.toBeInvalid();
+  });
+
   it('increment/decrement buttons', () => {
     render(
       <ItemQuantity cartItemObj={cartItemObj} setCartItemObj={setCartItemObj} />

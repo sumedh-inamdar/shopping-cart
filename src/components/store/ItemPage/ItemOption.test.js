@@ -27,6 +27,7 @@ describe('select/option test', () => {
     }
   ];
   const cartItemObj = {
+    item: { price: 10 },
     options: [{ 'Grip Size': '4 1/8" (#1)' }, { Strings: 'Unstrung' }]
   };
   const setCartItemObj = jest.fn();
@@ -49,10 +50,14 @@ describe('select/option test', () => {
     );
     expect(setCartItemObj).toHaveBeenCalledTimes(2);
     expect(setCartItemObj).toHaveBeenNthCalledWith(1, {
-      options: [{ 'Grip Size': '4 3/8" (#3)' }, { Strings: 'Unstrung' }]
+      item: { price: 10 },
+      options: [{ 'Grip Size': '4 3/8" (#3)' }, { Strings: 'Unstrung' }],
+      unitPrice: 10
     });
     expect(setCartItemObj).toHaveBeenNthCalledWith(2, {
-      options: [{ 'Grip Size': '4 1/8" (#1)' }, { Strings: 'Polyester - $15' }]
+      item: { price: 10 },
+      options: [{ 'Grip Size': '4 1/8" (#1)' }, { Strings: 'Polyester - $15' }],
+      unitPrice: 25
     });
   });
 });
