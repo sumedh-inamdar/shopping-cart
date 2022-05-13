@@ -1,31 +1,53 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { categoryRouteMapping } from '../../data/data';
 import uniqid from 'uniqid';
+import { setCartItemQuantity } from '../../utils/helperFunc';
+import { CartContext, SetCartContext } from '../../App';
 
-export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
+export default function CheckoutItem({ cartItem }) {
   const item = cartItem.item;
   const cartItemQty = cartItem.quantity;
   const cartItemOptions = cartItem.options;
   const cartItemID = cartItem.id;
   const cartItemCost = cartItem.unitPrice * cartItemQty;
   const path = categoryRouteMapping.get(item.category);
+  const cart = useContext(CartContext);
+  const setCart = useContext(SetCartContext);
 
   function increaseQuantity() {
-    setQuantity(cartItemQty + 1, cartItemID);
+    setCartItemQuantity(
+      cart,
+      setCart,
+      Math.min(cartItemQty + 1, 100),
+      cartItemID
+    );
   }
   function decreaseQuantity() {
-    setQuantity(Math.max(cartItemQty - 1, 1), cartItemID);
+    setCartItemQuantity(
+      cart,
+      setCart,
+      Math.max(cartItemQty - 1, 1),
+      cartItemID
+    );
+  }
+  function deleteItem() {
+    setCart(cart.filter((cartItem) => cartItem.id !== cartItemID));
   }
   function inputChangeHandler(event) {
     const input = event.target;
     input.setCustomValidity('');
 
     if (input.checkValidity()) {
-      setQuantity(Number(event.target.value), cartItemID);
+      setCartItemQuantity(
+        cart,
+        setCart,
+        Number(event.target.value),
+        cartItemID
+      );
     } else {
       input.setCustomValidity('Quantity must be between 1 and 100');
       input.reportValidity();
@@ -95,7 +117,7 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
             </div>
             <button
               className="w-fit space-x-2 px-2 hover:bg-slate-300"
-              onClick={() => deleteItem(cartItemID)}>
+              onClick={deleteItem}>
               <FontAwesomeIcon icon={faTrash} />
               <span>Remove Item</span>
             </button>
@@ -106,7 +128,5 @@ export default function CheckoutItem({ cartItem, setQuantity, deleteItem }) {
   );
 }
 CheckoutItem.propTypes = {
-  cartItem: PropTypes.object.isRequired,
-  setQuantity: PropTypes.func.isRequired,
-  deleteItem: PropTypes.func.isRequired
+  cartItem: PropTypes.object.isRequired
 };

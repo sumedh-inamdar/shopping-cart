@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import CheckoutItem from './CheckoutItem';
-import { CartContext, SetCartContext } from '../../App';
-import { setCartItemQuantity, calcCartTotal } from '../../utils/helperFunc';
+import { CartContext } from '../../App';
+import { calcCartTotal } from '../../utils/helperFunc';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faApplePay,
@@ -13,7 +13,6 @@ import {
 
 export default function CheckoutList() {
   const cart = useContext(CartContext);
-  const setCart = useContext(SetCartContext);
   const quantity = cart.reduce(
     (previousValue, currentValue) => previousValue + currentValue.quantity,
     0
@@ -22,24 +21,13 @@ export default function CheckoutList() {
   const salesTax = subTotal * 0.05;
   const orderTotal = subTotal + salesTax;
 
-  function deleteItem(cartItemID) {
-    setCart(cart.filter((cartItem) => cartItem.id !== cartItemID));
-  }
-
   return (
     <ul className="space-y-4">
       <div className="text-2xl text-center mb-2">
         My Cart ({quantity} items)
       </div>
       {cart.map((cartItem) => (
-        <CheckoutItem
-          key={cartItem.id}
-          cartItem={cartItem}
-          setQuantity={(qty, cartItemID) =>
-            setCartItemQuantity(cart, setCart, qty, cartItemID)
-          }
-          deleteItem={deleteItem}
-        />
+        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <div className="w-full px-8 py-4 bg-slate-200">
         <div className="my-2 font-bold">Total</div>
