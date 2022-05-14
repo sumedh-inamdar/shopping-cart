@@ -71,12 +71,14 @@ export default function CheckoutItem({ cartItem }) {
           <Link to={`/store/${path}/${item.id}`}>
             <div>{item.name}</div>
           </Link>
-          <div className="font-light">${cartItemCost.toFixed(2)}</div>
+          <div className="font-light" data-testid="cartItemCost">
+            ${cartItemCost.toFixed(2)}
+          </div>
         </div>
         <div className="flex-1 flex flex-row text-sm">
           <div className="flex-1 flex flex-col justify-start space-y-2 mt-2">
             {cartItemOptions.map((option) => (
-              <div key={uniqid()} className="">
+              <div key={uniqid()}>
                 {Object.keys(option)[0]}:{' '}
                 <span className="font-light">{Object.values(option)[0]}</span>
               </div>
@@ -98,7 +100,8 @@ export default function CheckoutItem({ cartItem }) {
                 <div className="flex max-w-[56px] ml-2 flex-1 inline divide-x-2 divide-slate-400 text-white h-full font-light">
                   <button
                     className="flex-1 bg-indigo-500 md:w-6 h-full hover:bg-indigo-600"
-                    onClick={increaseQuantity}>
+                    onClick={increaseQuantity}
+                    aria-label="increaseQuantity">
                     <FontAwesomeIcon
                       icon={faPlus}
                       className="h-3/4 align-middle"
@@ -106,7 +109,8 @@ export default function CheckoutItem({ cartItem }) {
                   </button>
                   <button
                     className="flex-1 bg-indigo-400 h-full hover:bg-indigo-500"
-                    onClick={decreaseQuantity}>
+                    onClick={decreaseQuantity}
+                    aria-label="decreaseQuantity">
                     <FontAwesomeIcon
                       icon={faMinus}
                       className="h-3/4 align-middle"

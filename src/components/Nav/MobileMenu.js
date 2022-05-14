@@ -16,7 +16,7 @@ export default function MobileMenu({ clickHandler }) {
         </li>
         <li>
           <Link
-            to="/store"
+            to="/store/racquets"
             className="block text-sm px-4 py-4 hover:bg-green-600 transition duration-300">
             STORE
           </Link>

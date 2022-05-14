@@ -91,7 +91,7 @@ exports[`snapshot 1`] = `
                 </a>
                 <a
                   class="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
-                  href="/store"
+                  href="/store/racquets"
                 >
                   STORE
                 </a>
@@ -181,7 +181,7 @@ exports[`snapshot 1`] = `
                 </div>
                 <a
                   class="opacity-0 animate-fade-in-top-1000 md:w-3/4 bg-blue-400 hover:bg-blue-500 transition-colors pt-1 border-2"
-                  href="/store"
+                  href="/store/racquets"
                 >
                   <button
                     class="w-full"

@@ -33,11 +33,11 @@ export default function CheckoutList() {
         <div className="my-2 font-bold">Total</div>
         <div className="flex justify-between">
           <span>Sub-total</span>
-          <span>${subTotal.toFixed(2)}</span>
+          <span data-testid="subTotal">${subTotal.toFixed(2)}</span>
         </div>
         <div className="flex justify-between">
           <span>Sales Tax (5%)</span>
-          <span>${salesTax.toFixed(2)}</span>
+          <span data-testid="salesTax">${salesTax.toFixed(2)}</span>
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
@@ -46,7 +46,7 @@ export default function CheckoutList() {
         <hr className="border-1 border-black my-2" />
         <div className="flex justify-between font-bold my-2 text-lg">
           <span>Order Total</span>
-          <span>${orderTotal.toFixed(2)}</span>
+          <span data-testid="orderTotal">${orderTotal.toFixed(2)}</span>
         </div>
         <button className="w-full py-2 bg-blue-200 hover:bg-blue-300 text-white">
           Checkout

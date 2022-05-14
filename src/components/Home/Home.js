@@ -26,7 +26,7 @@ export default function Home() {
                 Your number one premier tennis equipment supplier.
               </div>
               <Link
-                to="/store"
+                to="/store/racquets"
                 className="opacity-0 animate-fade-in-top-1000 md:w-3/4 bg-blue-400 hover:bg-blue-500 transition-colors pt-1 border-2">
                 <button className="w-full">Shop Now</button>
               </Link>

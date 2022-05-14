@@ -11,7 +11,7 @@ export default function DesktopMenu() {
       </Link>
       <Link
         className="py-4 px-2 navLink text-2xl font-light hover:text-zinc-600 transition duration-300"
-        to="/store">
+        to="/store/racquets">
         STORE
       </Link>
       <Link

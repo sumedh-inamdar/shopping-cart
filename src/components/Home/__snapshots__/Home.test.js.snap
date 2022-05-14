@@ -43,7 +43,7 @@ exports[`snapshot 1`] = `
             </div>
             <a
               class="opacity-0 animate-fade-in-top-1000 md:w-3/4 bg-blue-400 hover:bg-blue-500 transition-colors pt-1 border-2"
-              href="/store"
+              href="/store/racquets"
             >
               <button
                 class="w-full"
