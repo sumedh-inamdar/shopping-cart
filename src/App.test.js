@@ -110,3 +110,14 @@ describe('Store Navigation', () => {
     expect(screen.getByText(/babolat pure aero/i)).toBeInTheDocument();
   });
 });
+
+describe('Checkout page', () => {
+  it('empty cart render + shop now', () => {
+    render(<App />);
+    userEvent.click(screen.getByRole('link', { name: /shopping-cart/i }));
+    expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument();
+
+    userEvent.click(screen.getByRole('button', { name: /shop now/i }));
+    expect(screen.getByText(/babolat pure aero/i)).toBeInTheDocument();
+  });
+});

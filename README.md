@@ -34,8 +34,7 @@ Shopping cart site where user can navigate multiple pages and add / delete produ
 - [x] Add item to cart and checkout
 - [x] Navigate back to ItemPage upon click in Checkout
 - [x] Navigation of Store (mobile + desktop)
-- [ ] Footer Links
-- [ ] Checkout: Check for correct rendering based on cart qty
+- [x] Checkout: Check for correct rendering based on cart qty
 
 ### End to End Tests
 - [x] Navigate to store, add different items, and go to checkout
