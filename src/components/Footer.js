@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="absolute inset-x-0 bottom-0 h-[452px] md:h-52 bg-indigo-500 text-white py-6 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row space-y-9 md:space-y-0">
+    <footer className="absolute inset-x-0 bottom-0 h-fit bg-indigo-500 text-white py-6 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row space-y-9 md:space-y-0 md:space-x-9">
         <div className="flex-1 space-y-4">
           <div className="text-xl font-bold">
             Join the TENNSCENTRL Mailing List

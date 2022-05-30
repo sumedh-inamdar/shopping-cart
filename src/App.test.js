@@ -23,7 +23,6 @@ describe('Navigation Bar Links', () => {
     render(<App />);
     expect(screen.queryByRole('list', { name: 'store-nav-list' })).toBeNull();
     expect(screen.queryByText('Babolat')).toBeNull();
-
     userEvent.click(screen.getByRole('button', { name: 'Shop Now' }));
 
     expect(

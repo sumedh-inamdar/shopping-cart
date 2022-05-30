@@ -26,7 +26,7 @@ function App() {
   return (
     <div id="app" className="relative min-h-screen">
       <BrowserRouter basename="/shopping-cart">
-        <div className="pb-[452px] md:pb-52">
+        <div className="pb-[452px] md:pb-[272px]">
           <CartContext.Provider value={cart}>
             <Nav />
             <ScrollToTop>

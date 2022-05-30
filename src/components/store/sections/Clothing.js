@@ -15,7 +15,7 @@ export default function Clothing({ items, section, setSection }) {
           <div className="text-3xl md:text-4xl font-medium my-3 text-center md:text-left">
             {type}
           </div>
-          <div className="grid gap-4 grid-cols-1 md:grid-cols-3 md:min-w-[600px]">
+          <div className="grid gap-4 grid-cols-[repeat(auto-fit,_minmax(225px,_1fr))]">
             {items
               .filter((item) => item.type === type)
               .map((item) => (
